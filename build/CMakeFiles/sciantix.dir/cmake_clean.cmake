@@ -75,8 +75,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sciantix.dir/src/operations/SetVariables.C.o.d"
   "CMakeFiles/sciantix.dir/src/operations/UpdateVariables.C.o"
   "CMakeFiles/sciantix.dir/src/operations/UpdateVariables.C.o.d"
-  "libsciantix.a"
-  "libsciantix.pdb"
+  "sciantix.pdb"
+  "sciantix.x"
 )
 
 # Per-language clean rules from dependency scanning.

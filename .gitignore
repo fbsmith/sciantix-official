@@ -110,3 +110,11 @@ out/
 *.png
 # NUS parametric studies: generated cases and their outputs
 regression/nus/studies/runs/
+
+# Generated files in driver
+driver/sciantix_driver
+driver/output.txt
+driver/overview.txt
+output.txt
+overview.txt
+main
