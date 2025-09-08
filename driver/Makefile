@@ -1,13 +1,13 @@
 # Define variables
 CXX = g++
-CFLAGS = -I /home/fbsmith/sciantix-official/include \
-		 -I /home/fbsmith/sciantix-official/include/classes \
-		 -I /home/fbsmith/sciantix-official/include/namespaces
-LDFLAGS = -lm
+CFLAGS = -I ../include \
+		 -I ../include/classes \
+		 -I ../include/namespaces
+LDFLAGS = -L ../build -lsciantix
 
 SRC = main.c
 OBJ = $(SRC:.c=.o)
-TARGET = main
+TARGET = sciantix_driver
 
 # Default target: builds the executable
 all: $(TARGET)
