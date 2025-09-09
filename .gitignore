@@ -23,7 +23,6 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
 *.lib
 
 # Executables
@@ -53,3 +52,8 @@ old_files/
 __pycache__/
 optimization
 GSA_output_files/
+
+# Generated files in driver
+driver/sciantix_driver
+driver/output.txt
+driver/overview.txt
