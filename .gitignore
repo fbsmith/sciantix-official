@@ -28,6 +28,14 @@
 *.mod
 *.smod
 
+<<<<<<< HEAD
+=======
+# Compiled Static libraries
+*.lai
+*.la
+*.lib
+
+>>>>>>> 7e54e479 (Updated .gitignore to ignore generated files in driver)
 # Executables
 *.exe
 *.out
@@ -71,6 +79,7 @@ __pycache__/
 
 .vscode/
 .vs/
+<<<<<<< HEAD
 
 
 ########################################
@@ -89,3 +98,14 @@ Testing/
 bin/
 out/
 *.png
+=======
+old_files/
+__pycache__/
+optimization
+GSA_output_files/
+
+# Generated files in driver
+driver/sciantix_driver
+driver/output.txt
+driver/overview.txt
+>>>>>>> 7e54e479 (Updated .gitignore to ignore generated files in driver)
