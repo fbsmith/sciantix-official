@@ -1,9 +1,9 @@
 # Define variables
 CXX = g++
-CFLAGS = -I ../include \
-		 -I ../include/classes \
-		 -I ../include/namespaces
-LDFLAGS = -L ../build -lsciantix
+CFLAGS = -I include \
+		 -I include/classes \
+		 -I include/namespaces
+LDFLAGS = -L build -lsciantix
 
 SRC = main.c
 OBJ = $(SRC:.c=.o)
