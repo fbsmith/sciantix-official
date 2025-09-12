@@ -47,7 +47,7 @@ double* getSciantixHistory() {
 }
 
 double* getSciantixVariables() {
-    double* Sciantix_variables = (double*)malloc(161 * sizeof(double));   
+    double* Sciantix_variables = (double*)calloc(161, sizeof(double));   
 
     Sciantix_variables[  0] = 5.0e-06;  // Grain radius, m
 
@@ -186,17 +186,48 @@ double* getSciantixScalingFactors() {
 }
 
 double* getSciantixDiffusionModes() {
-    double* Sciantix_diffusion_modes = (double*)malloc(720 * sizeof(double));
-    for (int i = 0; i < 720; i++) {
-        Sciantix_diffusion_modes[i] = 0.0;
-    }
+    /*
+    For SciantixDiffusionModes, this flattned array handles diffusion modes,
+    diffusion mode solutions, and diffusion modes related to bubbles for
+    each gas. Diffusion modes, diffusion mode solutions, and diffusion modes
+    bubbles are 40 elements long, each, meaning each element requires 120
+    elements in the flattened Sciantix_diffusion_modes array
 
-    return Sciantix_diffusion_modes;
+    Xe
+      0- 39 diffusion modes
+     40- 79 diffusion modes related to solutions
+     80-119 diffusion modes related to bubbles
+
+    Kr
+    120-159 diffusion modes
+    160-199 diffusion modes related to solutions
+    200-239 diffusion modes related to bubbles
+
+    He
+    240-279 diffusion modes
+    280-319 diffusion modes related to solutions
+    320-359 diffusion modes related to bubbles
+
+    Xe133
+    360-399 diffusion modes
+    400-439 diffusion modes related to solutions
+    440-479 diffusion modes related to bubbles
+
+    Kr85m
+    480-519 diffusion modes
+    520-559 diffusion modes related to solutions
+    560-599 diffusion modes related to bubbles
+
+    Xe in HBS
+    600-639 diffusion modes
+    640-679 diffusion modes related to solutions
+    */
+    return (double*)calloc(680, sizeof(double));
 }
 
 int main() {
     // setup input to feed to SCIANTIX
-    printf("Setting up input for SCIANTIX...\n");
+    printf("Setting up input for SCIANTIX...\n\n");
 
     // get Sciantix inputs
     int* Sciantix_options = getSciantixOptions();
@@ -205,10 +236,10 @@ int main() {
     double* Sciantix_scaling_factors = getSciantixScalingFactors();
     double* Sciantix_diffusion_modes = getSciantixDiffusionModes();
 
-    printf("Finished setting up input.\n");
+    printf("Finished setting up input.\n\n");
 
     // call SCIANTIX
-    printf("Calling SCIANTIX...\n");
+    printf("Calling SCIANTIX...\n\n");
     Sciantix(
         Sciantix_options, 
         Sciantix_history, 
@@ -216,11 +247,17 @@ int main() {
         Sciantix_scaling_factors, 
         Sciantix_diffusion_modes
     );
-    printf("SCIANTIX called successfully.\n");
+    printf("SCIANTIX called successfully.\n\n");
 
     // print output from SCIANTIX
-    printf("Output from SCIANTIX...\n");
-    printf("SCIANTIX output processed successfully.\n");
+    printf("Output from SCIANTIX...\n\n");
+
+    for (int i = 0; i < 161; i++) {
+        printf("Sciantix_variables[%d] = %e\n", i, Sciantix_variables[i]);
+    }
+    printf("\n");
+
+    printf("SCIANTIX output processed successfully.\n\n");
 
     free(Sciantix_options);
     free(Sciantix_history);
