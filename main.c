@@ -236,6 +236,11 @@ int main() {
     double* Sciantix_scaling_factors = getSciantixScalingFactors();
     double* Sciantix_diffusion_modes = getSciantixDiffusionModes();
 
+    for (int i = 0; i < 161; i++) {
+        printf("Sciantix_variables[%d] = %e\n", i, Sciantix_variables[i]);
+    }
+    printf("\n");
+
     printf("Finished setting up input.\n\n");
 
     // call SCIANTIX

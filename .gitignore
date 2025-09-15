@@ -54,6 +54,6 @@ optimization
 GSA_output_files/
 
 # Generated files in driver
-driver/sciantix_driver
-driver/output.txt
-driver/overview.txt
+sciantix_driver
+output.txt
+overview.txt
