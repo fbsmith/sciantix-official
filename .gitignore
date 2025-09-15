@@ -105,7 +105,13 @@ optimization
 GSA_output_files/
 
 # Generated files in driver
+<<<<<<< HEAD
 driver/sciantix_driver
 driver/output.txt
 driver/overview.txt
 >>>>>>> 7e54e479 (Updated .gitignore to ignore generated files in driver)
+=======
+sciantix_driver
+output.txt
+overview.txt
+>>>>>>> 619f66ac (Added comments to main.c)
