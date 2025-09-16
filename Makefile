@@ -5,8 +5,8 @@ CFLAGS = -I include \
 		 -I include/namespaces
 LDFLAGS = -L build -lsciantix
 
-SRC = main.c
-OBJ = $(SRC:.c=.o)
+SRC = main.C
+OBJ = $(SRC:.C=.o)
 TARGET = sciantix_driver
 
 # Default target: builds the executable
@@ -14,12 +14,10 @@ all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	$(CXX) -o $@ $^ $(LDFLAGS)
-
-# Rule to compile .c files into .o files
-%.o: %.c
+	
+# Rule to compile .C files into .o files
+%.o: %.C
 	$(CXX) $(CFLAGS) -c $< -o $@
-
-.INTERMEDIATE: $(OBJ)
 
 # Clean target: removes compiled files
 .PHONY: clean
