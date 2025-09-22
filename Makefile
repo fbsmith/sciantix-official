@@ -1,8 +1,6 @@
 # Define variables
 CXX = g++
-CFLAGS = -I include \
-		 -I include/classes \
-		 -I include/namespaces
+CFLAGS = -I include/coupling
 LDFLAGS = -L build -lsciantix
 
 SRC = main.C

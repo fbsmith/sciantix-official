@@ -55,5 +55,4 @@ GSA_output_files/
 
 # Generated files in driver
 sciantix_driver
-output.txt
-overview.txt
+main

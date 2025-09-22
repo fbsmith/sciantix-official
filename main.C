@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <Sciantix.h>
+#include <TUSrcCoupling.h>
 
 int* getSciantixOptions() {
-    int* Sciantix_options = (int*)malloc(23 * sizeof(int));
+    int* Sciantix_options = new int[23];
     Sciantix_options[0] = 1;    // iGrainGrowth (0= no grain growth, 1= Ainscough et al. (1973), 2= Van Uffelen et al. (2013))
     Sciantix_options[1] = 1;    // iFissionGasDiffusivity (0= constant value, 1= Turnbull et al. (1988))
     Sciantix_options[2] = 1;    // iDiffusionSolver (1= SDA with quasi-stationary hypothesis, 2= SDA without quasi-stationary hypothesis)
@@ -31,7 +31,7 @@ int* getSciantixOptions() {
 }
 
 double* getSciantixHistory() {
-    double* Sciantix_history = (double*)malloc(8 * sizeof(double));
+    double* Sciantix_history = new double[8];
 
     Sciantix_history[0] = 0;      // time in hours
     Sciantix_history[1] = 1273;   // temperature in Kelvin
@@ -47,7 +47,7 @@ double* getSciantixHistory() {
 }
 
 double* getSciantixVariables() {
-    double* Sciantix_variables = (double*)calloc(161, sizeof(double));   
+    double* Sciantix_variables = new double[161];   
 
     Sciantix_variables[  0] = 5.0e-06;  // Grain radius, m
 
@@ -109,7 +109,8 @@ double* getSciantixVariables() {
     Sciantix_variables[ 68] = 0.0;      // Intragranular gas solution swelling, /
 
     // Intergranular bubbles
-    Sciantix_variables[ 25] = 0.0;      // Intergranular bubble concentration, bub/m2
+    Sciantix_variables[ 25] = 20.0e+12; // Intergranular bubble concentration, bub/m2
+                                        // Value taken from White (2004) and converted from 20/um^2 to /m2
     Sciantix_variables[ 26] = 0.0;      // Xe atoms per intergranular bubble
     Sciantix_variables[ 27] = 0.0;      // Kr atoms per intergranular bubble
     Sciantix_variables[ 28] = 0.0;      // He atoms per intergranular bubble
@@ -171,7 +172,7 @@ double* getSciantixVariables() {
 }
 
 double* getSciantixScalingFactors() {
-    double* Sciantix_scaling_factors = (double*)malloc(9 * sizeof(double));
+    double* Sciantix_scaling_factors = new double[9];
     Sciantix_scaling_factors[0] = 1.0;   // scaling factor - resolution rate
     Sciantix_scaling_factors[1] = 1.0;   // scaling factor - trapping rate
     Sciantix_scaling_factors[2] = 1.0;   // scaling factor - nucleation rate
@@ -222,7 +223,7 @@ double* getSciantixDiffusionModes() {
     600-639 diffusion modes
     640-679 diffusion modes related to solutions
     */
-    return (double*)calloc(680, sizeof(double));
+    return new double[680];
 }
 
 int main() {
@@ -245,7 +246,7 @@ int main() {
 
     // call SCIANTIX
     printf("Calling SCIANTIX...\n\n");
-    Sciantix(
+    callSciantix(
         Sciantix_options, 
         Sciantix_history, 
         Sciantix_variables, 
@@ -264,11 +265,11 @@ int main() {
 
     printf("SCIANTIX output processed successfully.\n\n");
 
-    free(Sciantix_options);
-    free(Sciantix_history);
-    free(Sciantix_variables);
-    free(Sciantix_scaling_factors);
-    free(Sciantix_diffusion_modes);
+    delete(Sciantix_options);
+    delete(Sciantix_history);
+    delete(Sciantix_variables);
+    delete(Sciantix_scaling_factors);
+    delete(Sciantix_diffusion_modes);
     
     return 0;
 }
