@@ -112,6 +112,10 @@ driver/overview.txt
 >>>>>>> 7e54e479 (Updated .gitignore to ignore generated files in driver)
 =======
 sciantix_driver
+<<<<<<< HEAD
 output.txt
 overview.txt
 >>>>>>> 619f66ac (Added comments to main.c)
+=======
+main
+>>>>>>> 0ac16679 (Modified input to have initial condition of 20 bub/um2 as per White 2004)
