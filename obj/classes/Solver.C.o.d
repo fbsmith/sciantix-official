@@ -1,7 +1,7 @@
 CMakeFiles/sciantix.dir/src/classes/Solver.C.o: \
- /home/fbsmith/sciantix-official/src/classes/Solver.C \
+ /home/fbsmith/projects/sciantix-official/src/classes/Solver.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/classes/Solver.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Solver.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -141,8 +141,8 @@ CMakeFiles/sciantix.dir/src/classes/Solver.C.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/fbsmith/sciantix-official/include/classes/InputVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Variable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/InputVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Variable.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \

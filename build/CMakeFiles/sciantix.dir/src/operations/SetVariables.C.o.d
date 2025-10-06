@@ -1,7 +1,7 @@
 CMakeFiles/sciantix.dir/src/operations/SetVariables.C.o: \
- /home/fbsmith/sciantix-official/src/operations/SetVariables.C \
+ /home/fbsmith/projects/sciantix-official/src/operations/SetVariables.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/operations/SetVariables.h \
+ /home/fbsmith/projects/sciantix-official/include/operations/SetVariables.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -52,8 +52,8 @@ CMakeFiles/sciantix.dir/src/operations/SetVariables.C.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/fbsmith/sciantix-official/include/classes/InputVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Variable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/InputVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Variable.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
  /usr/include/c++/13/bits/postypes.h /usr/include/c++/13/cwchar \
@@ -157,16 +157,16 @@ CMakeFiles/sciantix.dir/src/operations/SetVariables.C.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/fbsmith/sciantix-official/include/classes/SciantixArray.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixArray.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/ext/aligned_buffer.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/fbsmith/sciantix-official/include/operations/SetVariablesFunctions.h \
- /home/fbsmith/sciantix-official/include/classes/SciantixVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Simulation.h \
+ /home/fbsmith/projects/sciantix-official/include/operations/SetVariablesFunctions.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Simulation.h \
  /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -190,14 +190,14 @@ CMakeFiles/sciantix.dir/src/operations/SetVariables.C.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/fbsmith/sciantix-official/include/classes/Solver.h \
- /home/fbsmith/sciantix-official/include/classes/InputVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Model.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Solver.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/InputVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Model.h \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
- /home/fbsmith/sciantix-official/include/classes/Matrix.h \
- /home/fbsmith/sciantix-official/include/classes/Material.h \
- /home/fbsmith/sciantix-official/include/namespaces/Constants.h \
- /home/fbsmith/sciantix-official/include/namespaces/ErrorMessages.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Matrix.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Material.h \
+ /home/fbsmith/projects/sciantix-official/include/namespaces/Constants.h \
+ /home/fbsmith/projects/sciantix-official/include/namespaces/ErrorMessages.h \
  /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h /usr/include/c++/13/ctime \
  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
@@ -210,8 +210,8 @@ CMakeFiles/sciantix.dir/src/operations/SetVariables.C.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/fbsmith/sciantix-official/include/MainVariables.h \
- /home/fbsmith/sciantix-official/include/classes/SciantixArray.h \
- /home/fbsmith/sciantix-official/include/classes/SciantixVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Gas.h \
- /home/fbsmith/sciantix-official/include/classes/System.h
+ /home/fbsmith/projects/sciantix-official/include/MainVariables.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixArray.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Gas.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/System.h

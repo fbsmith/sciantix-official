@@ -1,8 +1,8 @@
 CMakeFiles/sciantix.dir/src/classes/SciantixVariable.C.o: \
- /home/fbsmith/sciantix-official/src/classes/SciantixVariable.C \
+ /home/fbsmith/projects/sciantix-official/src/classes/SciantixVariable.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/classes/SciantixVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Variable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Variable.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

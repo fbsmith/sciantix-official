@@ -1,7 +1,7 @@
 CMakeFiles/sciantix.dir/src/MainVariables.C.o: \
- /home/fbsmith/sciantix-official/src/MainVariables.C \
+ /home/fbsmith/projects/sciantix-official/src/MainVariables.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/MainVariables.h \
+ /home/fbsmith/projects/sciantix-official/include/MainVariables.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

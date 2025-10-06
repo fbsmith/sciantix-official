@@ -1,7 +1,7 @@
 CMakeFiles/sciantix.dir/src/file_manager/TimeStepCalculation.C.o: \
- /home/fbsmith/sciantix-official/src/file_manager/TimeStepCalculation.C \
+ /home/fbsmith/projects/sciantix-official/src/file_manager/TimeStepCalculation.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/file_manager/TimeStepCalculation.h \
+ /home/fbsmith/projects/sciantix-official/include/file_manager/TimeStepCalculation.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

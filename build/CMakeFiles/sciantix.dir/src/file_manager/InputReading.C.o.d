@@ -1,8 +1,8 @@
 CMakeFiles/sciantix.dir/src/file_manager/InputReading.C.o: \
- /home/fbsmith/sciantix-official/src/file_manager/InputReading.C \
+ /home/fbsmith/projects/sciantix-official/src/file_manager/InputReading.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/file_manager/InputReading.h \
- /home/fbsmith/sciantix-official/include/namespaces/ErrorMessages.h \
+ /home/fbsmith/projects/sciantix-official/include/file_manager/InputReading.h \
+ /home/fbsmith/projects/sciantix-official/include/namespaces/ErrorMessages.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -166,7 +166,7 @@ CMakeFiles/sciantix.dir/src/file_manager/InputReading.C.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/fbsmith/sciantix-official/include/MainVariables.h \
+ /home/fbsmith/projects/sciantix-official/include/MainVariables.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/fbsmith/sciantix-official/include -I/home/fbsmith/sciantix-official/include/classes -I/home/fbsmith/sciantix-official/include/coupling -I/home/fbsmith/sciantix-official/include/file_manager -I/home/fbsmith/sciantix-official/include/models -I/home/fbsmith/sciantix-official/include/namespaces -I/home/fbsmith/sciantix-official/include/operations
+CXX_INCLUDES = -I/home/fbsmith/projects/sciantix-official/include -I/home/fbsmith/projects/sciantix-official/include/classes -I/home/fbsmith/projects/sciantix-official/include/coupling -I/home/fbsmith/projects/sciantix-official/include/file_manager -I/home/fbsmith/projects/sciantix-official/include/models -I/home/fbsmith/projects/sciantix-official/include/namespaces -I/home/fbsmith/projects/sciantix-official/include/operations
 
 CXX_FLAGS = 
 

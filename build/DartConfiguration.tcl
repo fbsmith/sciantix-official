@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/fbsmith/sciantix-official
-BuildDirectory: /home/fbsmith/sciantix-official/build
+SourceDirectory: /home/fbsmith/projects/sciantix-official
+BuildDirectory: /home/fbsmith/projects/sciantix-official/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/fbsmith/sciantix-official"
+ConfigureCommand: "/usr/bin/cmake" "/home/fbsmith/projects/sciantix-official"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -76,7 +76,7 @@ CudaSanitizerCommand:
 CudaSanitizerCommandOptions: 
 MemoryCheckType: 
 MemoryCheckSanitizerOptions: 
-MemoryCheckCommand: MEMORYCHECK_COMMAND-NOTFOUND
+MemoryCheckCommand: /usr/bin/valgrind
 MemoryCheckCommandOptions: 
 MemoryCheckSuppressionFile: 
 

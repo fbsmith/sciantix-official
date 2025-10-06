@@ -1,8 +1,8 @@
 CMakeFiles/sciantix.dir/src/classes/System.C.o: \
- /home/fbsmith/sciantix-official/src/classes/System.C \
+ /home/fbsmith/projects/sciantix-official/src/classes/System.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/classes/System.h \
- /home/fbsmith/sciantix-official/include/classes/Matrix.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/System.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Matrix.h \
  /usr/include/c++/13/cmath /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -87,7 +87,7 @@ CMakeFiles/sciantix.dir/src/classes/System.C.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/fbsmith/sciantix-official/include/classes/Material.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Material.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
@@ -139,8 +139,8 @@ CMakeFiles/sciantix.dir/src/classes/System.C.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/fbsmith/sciantix-official/include/namespaces/Constants.h \
- /home/fbsmith/sciantix-official/include/namespaces/ErrorMessages.h \
+ /home/fbsmith/projects/sciantix-official/include/namespaces/Constants.h \
+ /home/fbsmith/projects/sciantix-official/include/namespaces/ErrorMessages.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
@@ -190,19 +190,19 @@ CMakeFiles/sciantix.dir/src/classes/System.C.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/fbsmith/sciantix-official/include/MainVariables.h \
+ /home/fbsmith/projects/sciantix-official/include/MainVariables.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/fbsmith/sciantix-official/include/classes/SciantixArray.h \
- /home/fbsmith/sciantix-official/include/classes/Variable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixArray.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Variable.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/ext/aligned_buffer.h \
  /usr/include/c++/13/bits/node_handle.h \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/fbsmith/sciantix-official/include/classes/SciantixVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Gas.h \
- /home/fbsmith/sciantix-official/include/classes/InputVariable.h
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Gas.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/InputVariable.h

@@ -1,7 +1,7 @@
 CMakeFiles/sciantix.dir/src/file_manager/Initialization.C.o: \
- /home/fbsmith/sciantix-official/src/file_manager/Initialization.C \
+ /home/fbsmith/projects/sciantix-official/src/file_manager/Initialization.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/file_manager/Initialization.h \
+ /home/fbsmith/projects/sciantix-official/include/file_manager/Initialization.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

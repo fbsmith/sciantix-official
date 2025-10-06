@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fbsmith/sciantix-official
+CMAKE_SOURCE_DIR = /home/fbsmith/projects/sciantix-official
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fbsmith/sciantix-official/build
+CMAKE_BINARY_DIR = /home/fbsmith/projects/sciantix-official/build
 
 # Utility rule file for ContinuousConfigure.
 
@@ -82,6 +82,6 @@ CMakeFiles/ContinuousConfigure.dir/clean:
 .PHONY : CMakeFiles/ContinuousConfigure.dir/clean
 
 CMakeFiles/ContinuousConfigure.dir/depend:
-	cd /home/fbsmith/sciantix-official/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbsmith/sciantix-official /home/fbsmith/sciantix-official /home/fbsmith/sciantix-official/build /home/fbsmith/sciantix-official/build /home/fbsmith/sciantix-official/build/CMakeFiles/ContinuousConfigure.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/fbsmith/projects/sciantix-official/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fbsmith/projects/sciantix-official /home/fbsmith/projects/sciantix-official /home/fbsmith/projects/sciantix-official/build /home/fbsmith/projects/sciantix-official/build /home/fbsmith/projects/sciantix-official/build/CMakeFiles/ContinuousConfigure.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ContinuousConfigure.dir/depend
 

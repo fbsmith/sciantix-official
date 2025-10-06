@@ -1,7 +1,7 @@
 CMakeFiles/sciantix.dir/src/models/ChromiumSolubility.C.o: \
- /home/fbsmith/sciantix-official/src/models/ChromiumSolubility.C \
+ /home/fbsmith/projects/sciantix-official/src/models/ChromiumSolubility.C \
  /usr/include/stdc-predef.h \
- /home/fbsmith/sciantix-official/include/classes/Simulation.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Simulation.h \
  /usr/include/c++/13/cmath /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -108,7 +108,7 @@ CMakeFiles/sciantix.dir/src/models/ChromiumSolubility.C.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/fbsmith/sciantix-official/include/classes/Solver.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Solver.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
  /usr/include/c++/13/bits/postypes.h /usr/include/c++/13/cwchar \
@@ -142,8 +142,8 @@ CMakeFiles/sciantix.dir/src/models/ChromiumSolubility.C.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/13/bits/charconv.h \
  /usr/include/c++/13/bits/basic_string.tcc \
- /home/fbsmith/sciantix-official/include/classes/InputVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Variable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/InputVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Variable.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
@@ -181,7 +181,7 @@ CMakeFiles/sciantix.dir/src/models/ChromiumSolubility.C.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/fbsmith/sciantix-official/include/classes/Model.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Model.h \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/ext/aligned_buffer.h \
@@ -189,10 +189,10 @@ CMakeFiles/sciantix.dir/src/models/ChromiumSolubility.C.o: \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/fbsmith/sciantix-official/include/classes/Matrix.h \
- /home/fbsmith/sciantix-official/include/classes/Material.h \
- /home/fbsmith/sciantix-official/include/namespaces/Constants.h \
- /home/fbsmith/sciantix-official/include/namespaces/ErrorMessages.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Matrix.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Material.h \
+ /home/fbsmith/projects/sciantix-official/include/namespaces/Constants.h \
+ /home/fbsmith/projects/sciantix-official/include/namespaces/ErrorMessages.h \
  /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h /usr/include/c++/13/ctime \
  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
@@ -205,8 +205,8 @@ CMakeFiles/sciantix.dir/src/models/ChromiumSolubility.C.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- /home/fbsmith/sciantix-official/include/MainVariables.h \
- /home/fbsmith/sciantix-official/include/classes/SciantixArray.h \
- /home/fbsmith/sciantix-official/include/classes/SciantixVariable.h \
- /home/fbsmith/sciantix-official/include/classes/Gas.h \
- /home/fbsmith/sciantix-official/include/classes/System.h
+ /home/fbsmith/projects/sciantix-official/include/MainVariables.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixArray.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/SciantixVariable.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/Gas.h \
+ /home/fbsmith/projects/sciantix-official/include/classes/System.h
