@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <TUSrcCoupling.h>
+#include <ctime>
 
 int* getSciantixOptions() {
     int* Sciantix_options = new int[23];
@@ -246,6 +247,9 @@ int main() {
 
     // call SCIANTIX
     printf("Calling SCIANTIX...\n\n");
+
+    std::clock_t cpu_start = std::clock();
+    
     callSciantix(
         Sciantix_options, 
         Sciantix_history, 
@@ -253,6 +257,9 @@ int main() {
         Sciantix_scaling_factors, 
         Sciantix_diffusion_modes
     );
+
+    std::clock_t cpu_end = std::clock();
+
     printf("SCIANTIX called successfully.\n\n");
 
     // print output from SCIANTIX
@@ -262,6 +269,9 @@ int main() {
         printf("Sciantix_variables[%d] = %e\n", i, Sciantix_variables[i]);
     }
     printf("\n");
+
+    double cpu_time_seconds = static_cast<double>(cpu_end - cpu_start) / CLOCKS_PER_SEC;
+    printf("SCIANTIX clock time: %.3e s\n\n", cpu_time_seconds);
 
     printf("SCIANTIX output processed successfully.\n\n");
 
