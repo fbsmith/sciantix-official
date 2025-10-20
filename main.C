@@ -1,32 +1,33 @@
 #include <stdio.h>
 #include <TUSrcCoupling.h>
 #include <ctime>
+#include <string>
 
 int* getSciantixOptions() {
     int* Sciantix_options = new int[23];
-    Sciantix_options[0] = 1;    // iGrainGrowth (0= no grain growth, 1= Ainscough et al. (1973), 2= Van Uffelen et al. (2013))
-    Sciantix_options[1] = 1;    // iFissionGasDiffusivity (0= constant value, 1= Turnbull et al. (1988))
-    Sciantix_options[2] = 1;    // iDiffusionSolver (1= SDA with quasi-stationary hypothesis, 2= SDA without quasi-stationary hypothesis)
-    Sciantix_options[3] = 1;    // iIntraGranularBubbleBehavior (1= Pizzocri et al. (2018))
-    Sciantix_options[4] = 1;    // iResolutionRate (0= constant value, 1= Turnbull (1971), 2= Losonen (2000), 3= thermal resolution, Cognini et al. (2021))
-    Sciantix_options[5] = 1;    // iTrappingRate (0= constant value, 1= Ham (1958))
-    Sciantix_options[6] = 1;    // iNucleationRate (0= constant value, 1= Olander, Wongsawaeng (2006))
-    Sciantix_options[7] = 1;    // iOutput (1= default output files)
-    Sciantix_options[8] = 1;    // iGrainBoundaryVacancyDiffusivity (0= constant value, 1= Reynolds and Burton (1979), 2= White (2004))
-    Sciantix_options[9] = 1;    // iGrainBoundaryBehaviour (0= no grain boundary bubbles, 1= Pastore et al (2013))
-    Sciantix_options[10] = 1;    // iGrainBoundaryMicroCracking (0= no model considered, 1= Barani et al. (2017))
-    Sciantix_options[11] = 0;    // iFuelMatrix (0= UO2, 1= UO2 + HBS)
-    Sciantix_options[12] = 0;    // iGrainBoundaryVenting (0= no model considered, 1= Pizzocri et al., D6.4 (2020), H2020 Project INSPYRE)
-    Sciantix_options[13] = 0;    // iRadioactiveFissionGas (0= not considered)
-    Sciantix_options[14] = 0;    // iHelium (0= not considered)
-    Sciantix_options[15] = 0;    // iHeDiffusivity (0= null value, 1= limited lattice damage, Luzzi et al. (2018), 2= significant lattice damage, Luzzi et al. (2018))
-    Sciantix_options[16] = 0;    // iGrainBoundarySweeping (0= no model considered, 1= TRANSURANUS swept volume model)
-    Sciantix_options[17] = 0;    // iHighBurnupStructureFormation (0= no model considered, 1= fraction of HBS-restructured volume from Barani et al. (2020))
-    Sciantix_options[18] = 0;    // iHighBurnupStructurePorosity (0= no evolution of HBS porosity, 1= HBS porosity evolution based on Spino et al. (2006) data)
-    Sciantix_options[19] = 0;    // iHeliumProductionRate (0= zero production rate, 1= helium from ternary fissions, 2= linear with burnup (FR))
-    Sciantix_options[20] = 0;    // iStoichiometryDeviation (0= not considered, 1= Cox et al. 1986, 2= Bittel et al. 1969, 3= Abrefah et al. 1994, 4= Imamura et al. 1997, 5= Langmuir-based approach)
-    Sciantix_options[21] = 0;    // iBubbleDiffusivity (0= not considered, 1= volume diffusivity)
-    Sciantix_options[23] = 0;    // iChromiumSolubility (0= not considered, 1= chromium solubility in UO2 based on Barani et al. (2020))
+    Sciantix_options[ 0] = 1;       // iGrainGrowth (0= no grain growth, 1= Ainscough et al. (1973), 2= Van Uffelen et al. (2013))
+    Sciantix_options[ 1] = 1;       // iFissionGasDiffusivity (0= constant value, 1= Turnbull et al. (1988))
+    Sciantix_options[ 2] = 1;       // iDiffusionSolver (1= SDA with quasi-stationary hypothesis, 2= SDA without quasi-stationary hypothesis)
+    Sciantix_options[ 3] = 1;       // iIntraGranularBubbleBehavior (1= Pizzocri et al. (2018))
+    Sciantix_options[ 4] = 1;       // iResolutionRate (0= constant value, 1= Turnbull (1971), 2= Losonen (2000), 3= thermal resolution, Cognini et al. (2021))
+    Sciantix_options[ 5] = 1;       // iTrappingRate (0= constant value, 1= Ham (1958))
+    Sciantix_options[ 6] = 1;       // iNucleationRate (0= constant value, 1= Olander, Wongsawaeng (2006))
+    Sciantix_options[ 7] = 1;       // iOutput (1= default output files)
+    Sciantix_options[ 8] = 1;       // iGrainBoundaryVacancyDiffusivity (0= constant value, 1= Reynolds and Burton (1979), 2= White (2004))
+    Sciantix_options[ 9] = 1;       // iGrainBoundaryBehaviour (0= no grain boundary bubbles, 1= Pastore et al (2013))
+    Sciantix_options[10] = 1;       // iGrainBoundaryMicroCracking (0= no model considered, 1= Barani et al. (2017))
+    Sciantix_options[11] = 0;       // iFuelMatrix (0= UO2, 1= UO2 + HBS)
+    Sciantix_options[12] = 0;       // iGrainBoundaryVenting (0= no model considered, 1= Pizzocri et al., D6.4 (2020), H2020 Project INSPYRE)
+    Sciantix_options[13] = 0;       // iRadioactiveFissionGas (0= not considered)
+    Sciantix_options[14] = 0;       // iHelium (0= not considered)
+    Sciantix_options[15] = 0;       // iHeDiffusivity (0= null value, 1= limited lattice damage, Luzzi et al. (2018), 2= significant lattice damage, Luzzi et al. (2018))
+    Sciantix_options[16] = 0;       // iGrainBoundarySweeping (0= no model considered, 1= TRANSURANUS swept volume model)
+    Sciantix_options[17] = 0;       // iHighBurnupStructureFormation (0= no model considered, 1= fraction of HBS-restructured volume from Barani et al. (2020))
+    Sciantix_options[18] = 0;       // iHighBurnupStructurePorosity (0= no evolution of HBS porosity, 1= HBS porosity evolution based on Spino et al. (2006) data)
+    Sciantix_options[19] = 0;       // iHeliumProductionRate (0= zero production rate, 1= helium from ternary fissions, 2= linear with burnup (FR))
+    Sciantix_options[20] = 0;       // iStoichiometryDeviation (0= not considered, 1= Cox et al. 1986, 2= Bittel et al. 1969, 3= Abrefah et al. 1994, 4= Imamura et al. 1997, 5= Langmuir-based approach)
+    Sciantix_options[21] = 0;       // iBubbleDiffusivity (0= not considered, 1= volume diffusivity)
+    Sciantix_options[23] = 0;       // iChromiumSolubility (0= not considered, 1= chromium solubility in UO2 based on Barani et al. (2020))
 
     return Sciantix_options;
 }
@@ -110,7 +111,7 @@ double* getSciantixVariables() {
     Sciantix_variables[ 68] = 0.0;      // Intragranular gas solution swelling, /
 
     // Intergranular bubbles
-    Sciantix_variables[ 25] = 20.0e+12; // Intergranular bubble concentration, bub/m2
+    Sciantix_variables[ 25] = 20.0;     // Intergranular bubble concentration, bub/m2
                                         // Value taken from White (2004) and converted from 20/um^2 to /m2
     Sciantix_variables[ 26] = 0.0;      // Xe atoms per intergranular bubble
     Sciantix_variables[ 27] = 0.0;      // Kr atoms per intergranular bubble
@@ -227,6 +228,28 @@ double* getSciantixDiffusionModes() {
     return new double[680];
 }
 
+void inputToCSV(std::string filename) {
+    // make file
+
+    // write options to CSV
+
+    // write history to CSV
+
+    // write variables to CSV
+
+    // write scaling factors to CSV
+
+    // close file
+}
+
+void outputToCSV(std::string filename) {
+    // open CSV file
+
+    // write variables to CSV
+
+    // close file
+}
+
 int main() {
     // setup input to feed to SCIANTIX
     printf("Setting up input for SCIANTIX...\n\n");
@@ -234,7 +257,7 @@ int main() {
     // get Sciantix inputs
     int* Sciantix_options = getSciantixOptions();
     double* Sciantix_history = getSciantixHistory();
-    double* Sciantix_variables = getSciantixVariables();    
+    double* Sciantix_variables = getSciantixVariables();   
     double* Sciantix_scaling_factors = getSciantixScalingFactors();
     double* Sciantix_diffusion_modes = getSciantixDiffusionModes();
 
