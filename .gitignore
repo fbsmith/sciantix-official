@@ -136,4 +136,10 @@ overview.txt
 >>>>>>> 619f66ac (Added comments to main.c)
 =======
 main
+<<<<<<< HEAD
 >>>>>>> 0ac16679 (Modified input to have initial condition of 20 bub/um2 as per White 2004)
+=======
+
+# Other files to ignore
+*.json
+>>>>>>> 44c557a9 (Initial Changes to inputToCSV)

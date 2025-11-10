@@ -2,6 +2,9 @@
 #include <TUSrcCoupling.h>
 #include <ctime>
 #include <string>
+#include <iostream>
+#include <fstream>
+#include <vector>
 
 int* getSciantixOptions() {
     int* Sciantix_options = new int[23];
@@ -27,7 +30,7 @@ int* getSciantixOptions() {
     Sciantix_options[19] = 0;       // iHeliumProductionRate (0= zero production rate, 1= helium from ternary fissions, 2= linear with burnup (FR))
     Sciantix_options[20] = 0;       // iStoichiometryDeviation (0= not considered, 1= Cox et al. 1986, 2= Bittel et al. 1969, 3= Abrefah et al. 1994, 4= Imamura et al. 1997, 5= Langmuir-based approach)
     Sciantix_options[21] = 0;       // iBubbleDiffusivity (0= not considered, 1= volume diffusivity)
-    Sciantix_options[23] = 0;       // iChromiumSolubility (0= not considered, 1= chromium solubility in UO2 based on Barani et al. (2020))
+    Sciantix_options[22] = 0;       // iChromiumSolubility (0= not considered, 1= chromium solubility in UO2 based on Barani et al. (2020))
 
     return Sciantix_options;
 }
@@ -229,17 +232,54 @@ double* getSciantixDiffusionModes() {
 }
 
 void inputToCSV(std::string filename) {
-    // make file
+    std::cout << "Entering inputToCSV function" << std::endl;
+    
+    // // make file
+    // int* Sciantix_options = getSciantixOptions();
+    // std::ofstream file(filename);
 
-    // write options to CSV
+    // if (!file.is_open()) {
+    //     std::cerr << "Error creating file: " << filename << std::endl;
+    //     delete[] Sciantix_options;
+    //     return;
+    // }
+    // // write options to CSV
+    // file << "SCIANTIX Options: \n";
+    // file << "ID, Name, Value\n";
+    // file << "0, iGrainGrowth, " << Sciantix_options[ 0] << "\n";
+    // file << "1, iFissionGasDiffusivity, " << Sciantix_options[ 1] << "\n";
+    // file << "2, iDiffusionSolver, " << Sciantix_options[ 2] << "\n";
+    // file << "3, iIntraGranularBubbleBehavior, " << Sciantix_options[ 3] << "\n";
+    // file << "4, iResolutionRate, " << Sciantix_options[ 4] << "\n";
+    // file << "5, iTrappingRate, " << Sciantix_options[ 5] << "\n";
+    // file << "6, iNucleationRate, " << Sciantix_options[ 6] << "\n";
+    // file << "7, iOutput, " << Sciantix_options[ 7] << "\n";
+    // file << "8, iGrainBoundaryVacancyDiffusivity, " << Sciantix_options[ 8] << "\n";
+    // file << "9, iGrainBoundaryBehaviour, " << Sciantix_options[ 9] << "\n";
+    // file << "10, iGrainBoundaryMicroCracking, " << Sciantix_options[ 10] << "\n";
+    // file << "11, iFuelMatrix, " << Sciantix_options[ 11] << "\n";
+    // file << "12, iGrainBoundaryVenting, " << Sciantix_options[ 12] << "\n";
+    // file << "13, iRadioactiveFissionGas, " << Sciantix_options[ 13] << "\n";
+    // file << "14, iHelium, " << Sciantix_options[ 14] << "\n";
+    // file << "15, iHeDiffusivity, " << Sciantix_options[ 15] << "\n";
+    // file << "16, iGrainBoundarySweeping, " << Sciantix_options[ 16] << "\n";
+    // file << "17, iHighBurnupStructureFormation, " << Sciantix_options[ 17] << "\n";
+    // file << "18, iHighBurnupStructurePorosity, " << Sciantix_options[ 18] << "\n";
+    // file << "19, iHeliumProductionRate, " << Sciantix_options[ 19] << "\n";
+    // file << "20, iStoichiometryDeviation, " << Sciantix_options[ 20] << "\n";
+    // file << "21, iBubbledifusivity, " << Sciantix_options[ 21] << "\n";
+    // file << "22, iChromiumSolubility, " << Sciantix_options[ 22] << "\n";
+    // file << "\n";
 
-    // write history to CSV
+    // // write history to CSV
 
-    // write variables to CSV
+    // // write variables to CSV
 
-    // write scaling factors to CSV
+    // // write scaling factors to CSV
 
-    // close file
+    // // close file
+    // delete[] Sciantix_options;
+    // file.close();
 }
 
 void outputToCSV(std::string filename) {
@@ -261,12 +301,9 @@ int main() {
     double* Sciantix_scaling_factors = getSciantixScalingFactors();
     double* Sciantix_diffusion_modes = getSciantixDiffusionModes();
 
-    for (int i = 0; i < 161; i++) {
-        printf("Sciantix_variables[%d] = %e\n", i, Sciantix_variables[i]);
-    }
-    printf("\n");
-
     printf("Finished setting up input.\n\n");
+
+    inputToCSV("filename");
 
     // call SCIANTIX
     printf("Calling SCIANTIX...\n\n");
@@ -287,11 +324,6 @@ int main() {
 
     // print output from SCIANTIX
     printf("Output from SCIANTIX...\n\n");
-
-    for (int i = 0; i < 161; i++) {
-        printf("Sciantix_variables[%d] = %e\n", i, Sciantix_variables[i]);
-    }
-    printf("\n");
 
     double cpu_time_seconds = static_cast<double>(cpu_end - cpu_start) / CLOCKS_PER_SEC;
     printf("SCIANTIX clock time: %.3e s\n\n", cpu_time_seconds);
