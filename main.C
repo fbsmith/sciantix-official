@@ -193,7 +193,7 @@ double* getSciantixScalingFactors() {
 
 double* getSciantixDiffusionModes() {
     /*
-    For SciantixDiffusionModes, this flattned array handles diffusion modes,
+    For SciantixDiffusionModes, this flattened array handles diffusion modes,
     diffusion mode solutions, and diffusion modes related to bubbles for
     each gas. Diffusion modes, diffusion mode solutions, and diffusion modes
     bubbles are 40 elements long, each, meaning each element requires 120
