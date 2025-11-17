@@ -5,8 +5,14 @@
 # Object files
 *.o
 *.obj
+<<<<<<< HEAD
 *.lo
 *.slo
+=======
+*.make
+*.a
+*.cmake
+>>>>>>> 917de596 (Added more exceptions to the .gitignore)
 
 # Dependency files
 *.d
@@ -48,6 +54,7 @@ sciantix.x
 # CMake
 ########################################
 
+<<<<<<< HEAD
 build/
 obj/
 CMakeFiles/
@@ -77,6 +84,17 @@ __pycache__/
 # Editors / IDEs
 ########################################
 
+=======
+#doxygen
+latex
+
+# Folders
+bin/
+obj/
+build/*
+out/
+documentation/
+>>>>>>> 917de596 (Added more exceptions to the .gitignore)
 .vscode/
 .vs/
 <<<<<<< HEAD
