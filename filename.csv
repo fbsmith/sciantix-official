@@ -1,6 +1,2 @@
-Filename, iGrainGrowth, iFissionGasDiffusivity, iDiffusionSolver, iIntraGranularBubbleBehavior, iResolutionRate, iTrappingRate, iNucleationRate, iOutput, iGrainBoundaryVacancyDiffusivity, iGrainBoundaryBehaviour, iGrainBoundaryMicroCracking, iFuelMatrix, iGrainBoundaryVenting, iRadioactiveFissionGas, iHelium, iHeDiffusivity, iGrainBoundarySweeping, iHighBurnupStructureFormation, iHighBurnupStructurePorosity, iHeliumProductionRate, iStoichiometryDeviation, iBubbledifusivity, iChromiumSolubility
-filename.csv, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-
-Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa), Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa)
-0, 1273, 1e+19, 0, 5500, 1273, 1e+19, 0
-
+Filename, iGrainGrowth, iFissionGasDiffusivity, iDiffusionSolver, iIntraGranularBubbleBehavior, iResolutionRate, iTrappingRate, iNucleationRate, iOutput, iGrainBoundaryVacancyDiffusivity, iGrainBoundaryBehaviour, iGrainBoundaryMicroCracking, iFuelMatrix, iGrainBoundaryVenting, iRadioactiveFissionGas, iHelium, iHeDiffusivity, iGrainBoundarySweeping, iHighBurnupStructureFormation, iHighBurnupStructurePorosity, iHeliumProductionRate, iStoichiometryDeviation, iBubbledifusivity, iChromiumSolubility, Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa), Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa)
+filename.csv, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1273, 1e+19, 0, 5500, 1273, 1e+19, 0

@@ -234,6 +234,10 @@ double* getSciantixDiffusionModes() {
 void inputToCSV(std::string filename) {
     std::cout << "Entering inputToCSV function" << std::endl;
 
+    // header and value strings
+    std::string headers = "";
+    std::string values = "";
+
     // make file
     int* Sciantix_options = getSciantixOptions();
     double* Sciantix_history = getSciantixHistory();
@@ -248,14 +252,14 @@ void inputToCSV(std::string filename) {
 
     std::cout << "Writing to csv file" << std::endl;
     // write options to CSV;
-    file << "Filename, iGrainGrowth, iFissionGasDiffusivity, iDiffusionSolver, "
+    header = "Filename, iGrainGrowth, iFissionGasDiffusivity, iDiffusionSolver, "
         "iIntraGranularBubbleBehavior, iResolutionRate, iTrappingRate, iNucleationRate, "
         "iOutput, iGrainBoundaryVacancyDiffusivity, iGrainBoundaryBehaviour, "
         "iGrainBoundaryMicroCracking, iFuelMatrix, iGrainBoundaryVenting, iRadioactiveFissionGas, " 
         "iHelium, iHeDiffusivity, iGrainBoundarySweeping, iHighBurnupStructureFormation, "
         "iHighBurnupStructurePorosity, iHeliumProductionRate, iStoichiometryDeviation, "
-        "iBubbledifusivity, iChromiumSolubility" << std::endl;
-    file << filename << ", "
+        "iBubbledifusivity, iChromiumSolubility";
+    values << filename << ", "
          << Sciantix_options[0] << ", "
          << Sciantix_options[1] << ", "
          << Sciantix_options[2] << ", "
@@ -321,7 +325,9 @@ void inputToCSV(std::string filename) {
             "Chromia solubility (% weight/UO2), Chromium solution (at/m3), Chromium precipitate (at/m3), Chromia solution (at/m3)"
             "Chromia precipitate (at/m3), Diffusion coefficient (m2/s)" << std::endl;
     // write scaling factors to CSV
-
+    file << headers << std::endl;
+    file << values << std::endl;
+ 
     // close file
     delete[] Sciantix_options;
     file.close();
