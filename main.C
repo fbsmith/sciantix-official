@@ -233,53 +233,98 @@ double* getSciantixDiffusionModes() {
 
 void inputToCSV(std::string filename) {
     std::cout << "Entering inputToCSV function" << std::endl;
-    
-    // // make file
-    // int* Sciantix_options = getSciantixOptions();
-    // std::ofstream file(filename);
 
-    // if (!file.is_open()) {
-    //     std::cerr << "Error creating file: " << filename << std::endl;
-    //     delete[] Sciantix_options;
-    //     return;
-    // }
-    // // write options to CSV
-    // file << "SCIANTIX Options: \n";
-    // file << "ID, Name, Value\n";
-    // file << "0, iGrainGrowth, " << Sciantix_options[ 0] << "\n";
-    // file << "1, iFissionGasDiffusivity, " << Sciantix_options[ 1] << "\n";
-    // file << "2, iDiffusionSolver, " << Sciantix_options[ 2] << "\n";
-    // file << "3, iIntraGranularBubbleBehavior, " << Sciantix_options[ 3] << "\n";
-    // file << "4, iResolutionRate, " << Sciantix_options[ 4] << "\n";
-    // file << "5, iTrappingRate, " << Sciantix_options[ 5] << "\n";
-    // file << "6, iNucleationRate, " << Sciantix_options[ 6] << "\n";
-    // file << "7, iOutput, " << Sciantix_options[ 7] << "\n";
-    // file << "8, iGrainBoundaryVacancyDiffusivity, " << Sciantix_options[ 8] << "\n";
-    // file << "9, iGrainBoundaryBehaviour, " << Sciantix_options[ 9] << "\n";
-    // file << "10, iGrainBoundaryMicroCracking, " << Sciantix_options[ 10] << "\n";
-    // file << "11, iFuelMatrix, " << Sciantix_options[ 11] << "\n";
-    // file << "12, iGrainBoundaryVenting, " << Sciantix_options[ 12] << "\n";
-    // file << "13, iRadioactiveFissionGas, " << Sciantix_options[ 13] << "\n";
-    // file << "14, iHelium, " << Sciantix_options[ 14] << "\n";
-    // file << "15, iHeDiffusivity, " << Sciantix_options[ 15] << "\n";
-    // file << "16, iGrainBoundarySweeping, " << Sciantix_options[ 16] << "\n";
-    // file << "17, iHighBurnupStructureFormation, " << Sciantix_options[ 17] << "\n";
-    // file << "18, iHighBurnupStructurePorosity, " << Sciantix_options[ 18] << "\n";
-    // file << "19, iHeliumProductionRate, " << Sciantix_options[ 19] << "\n";
-    // file << "20, iStoichiometryDeviation, " << Sciantix_options[ 20] << "\n";
-    // file << "21, iBubbledifusivity, " << Sciantix_options[ 21] << "\n";
-    // file << "22, iChromiumSolubility, " << Sciantix_options[ 22] << "\n";
-    // file << "\n";
+    // make file
+    int* Sciantix_options = getSciantixOptions();
+    double* Sciantix_history = getSciantixHistory();
+    std::ofstream file(filename);
 
-    // // write history to CSV
+    // check if file opened successfully
+    if (!file.is_open()) {
+        std::cerr << "Error creating file: " << filename << std::endl;
+        delete[] Sciantix_options;
+        return;
+    }
 
-    // // write variables to CSV
+    std::cout << "Writing to csv file" << std::endl;
+    // write options to CSV;
+    file << "Filename, iGrainGrowth, iFissionGasDiffusivity, iDiffusionSolver, "
+        "iIntraGranularBubbleBehavior, iResolutionRate, iTrappingRate, iNucleationRate, "
+        "iOutput, iGrainBoundaryVacancyDiffusivity, iGrainBoundaryBehaviour, "
+        "iGrainBoundaryMicroCracking, iFuelMatrix, iGrainBoundaryVenting, iRadioactiveFissionGas, " 
+        "iHelium, iHeDiffusivity, iGrainBoundarySweeping, iHighBurnupStructureFormation, "
+        "iHighBurnupStructurePorosity, iHeliumProductionRate, iStoichiometryDeviation, "
+        "iBubbledifusivity, iChromiumSolubility" << std::endl;
+    file << filename << ", "
+         << Sciantix_options[0] << ", "
+         << Sciantix_options[1] << ", "
+         << Sciantix_options[2] << ", "
+         << Sciantix_options[3] << ", "
+         << Sciantix_options[4] << ", "
+         << Sciantix_options[5] << ", "
+         << Sciantix_options[6] << ", "
+         << Sciantix_options[7] << ", "
+         << Sciantix_options[8] << ", "
+         << Sciantix_options[9] << ", "
+         << Sciantix_options[10] << ", "
+         << Sciantix_options[11] << ", "
+         << Sciantix_options[12] << ", "
+         << Sciantix_options[13] << ", "
+         << Sciantix_options[14] << ", "
+         << Sciantix_options[15] << ", "
+         << Sciantix_options[16] << ", "
+         << Sciantix_options[17] << ", "
+         << Sciantix_options[18] << ", "
+         << Sciantix_options[19] << ", "
+         << Sciantix_options[20] << ", "
+         << Sciantix_options[21] << ", "
+         << Sciantix_options[22] << std::endl;
+    file << "\n";
 
-    // // write scaling factors to CSV
+    // write history to CSV
+    file << "Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa), "
+            "Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa)" << std::endl;
+    file << Sciantix_history[0] << ", "
+         << Sciantix_history[1] << ", "
+         << Sciantix_history[2] << ", "
+         << Sciantix_history[3] << ", "
+         << Sciantix_history[4] << ", "
+         << Sciantix_history[5] << ", "
+         << Sciantix_history[6] << ", "
+         << Sciantix_history[7] << std::endl;
+    file << "\n";
 
-    // // close file
-    // delete[] Sciantix_options;
-    // file.close();
+    // write variables to CSV
+    file << "Grain radius (m), Xe produced (at/m3), Xe produced in HBS (at/m3), Xe in grain (at/m3), Xe in grain HBS (at/m3)"
+            "Xe in intragranular solution (at/m3), Xe in intragranular bubbles (at/m3), Xe at grain boundary (at/m3)"
+            "Xe released (at/m3), Kr produced (at/m3), Kr in grain (at/m3), Kr in intragranular solution (at/m3)"
+            "Kr in intragranular bubbles (at/m3), Kr at grain boundary (at/m3), Kr released (at/m3), Kr decayed initialized at 0.0"
+            "He produced (at/m3), He in grain (at/m3), He in intragranular solution (at/m3), He in intragranular bubbles (at/m3)"
+            "He at grain boundary (at/m3), He at grain boundary (alias/variant) (at/m3), He released (at/m3)"
+            "He decayed initialized at 0.0, Xe133 produced (at/m3), Xe133 in grain (at/m3), Xe133 in intragranular solution (at/m3)"
+            "Xe133 in intragranular bubbles (at/m3), Xe133 decayed (at/m3), Xe133 at grain boundary (at/m3), Xe133 released (at/m3)"
+            "Kr85m produced (at/m3), Kr85m in grain (at/m3), Kr85m in intragranular solution (at/m3), Kr85m in intragranular bubbles (at/m3)"
+            "Kr85m decayed (at/m3), Kr85m at grain boundary (at/m3), Kr85m released (at/m3), Intragranular bubble concentration (bub/m3)"
+            "Intragranular bubble radius (m), Xe atoms per intragranular bubble, Kr atoms per intragranular bubble"
+            "He atoms per intragranular bubble, Intragranular gas bubble swelling, Intragranular gas solution swelling"
+            "Intergranular bubble concentration (bub/m2), Xe atoms per intergranular bubble, Kr atoms per intergranular bubble"
+            "He atoms per intergranular bubble, Intergranular atoms per bubble, Intergranular vacancies per bubble"
+            "Intergranular bubble radius (m), Intergranular bubble area (m2), Intergranular bubble volume (m3)"
+            "Intergranular fractional coverage, Intergranular saturation fractional coverage, Intergranular gas swelling"
+            "Intergranular fractional intactness, Burnup (MWd/kgUO2), FIMA (%), Effective burnup (MWd/kgUO2)"
+            "Irradiation time (h), Fuel density (kg/m3), U234 (at/m3), U235 (at/m3), U236 (at/m3), U237 (at/m3), U238 (at/m3)"
+            "Intergranular vented fraction, Intergranular venting probability, Restructured volume fraction"
+            "Intragranular similarity ratio, Stoichiometry deviation, Fuel oxygen partial pressure (MPa), HBS porosity"
+            "HBS pore density (pores/m3), HBS pore volume (m3), HBS pore radius (m), Xe in HBS pores (at/m3)"
+            "Xe in HBS pores - variance (at^2/m3), Xe atoms per HBS pore (at/pore), Xe atoms per HBS pore - variance (at^2/pore)"
+            "Chromium content (µg/g), Lattice parameter (m), Theoretical density (kg/m3), Chromium solubility (% weight/UO2)"
+            "Chromia solubility (% weight/UO2), Chromium solution (at/m3), Chromium precipitate (at/m3), Chromia solution (at/m3)"
+            "Chromia precipitate (at/m3), Diffusion coefficient (m2/s)" << std::endl;
+    // write scaling factors to CSV
+
+    // close file
+    delete[] Sciantix_options;
+    file.close();
 }
 
 void outputToCSV(std::string filename) {
@@ -303,7 +348,7 @@ int main() {
 
     printf("Finished setting up input.\n\n");
 
-    inputToCSV("filename");
+    inputToCSV("filename.csv");
 
     // call SCIANTIX
     printf("Calling SCIANTIX...\n\n");
