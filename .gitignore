@@ -142,4 +142,10 @@ main
 
 # Other files to ignore
 *.json
+<<<<<<< HEAD
 >>>>>>> 44c557a9 (Initial Changes to inputToCSV)
+=======
+
+# Temporary data dump file
+filename.csv
+>>>>>>> 1220abec (Fixed bug in exporting parameters to csv file)
