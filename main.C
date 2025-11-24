@@ -234,7 +234,7 @@ double* getSciantixDiffusionModes() {
 void inputToCSV(std::string filename) {
     std::cout << "Entering inputToCSV function" << std::endl;
 
-    // header and value strings
+    // header and value strings *Note to Aaron: Write everything as one string (Options headers, history headers, variable headers. Then Option variables, history variables, etc..)
     std::string headers = "";
     std::string values = "";
 
@@ -252,39 +252,21 @@ void inputToCSV(std::string filename) {
 
     std::cout << "Writing to csv file" << std::endl;
     // write options to CSV;
-    header = "Filename, iGrainGrowth, iFissionGasDiffusivity, iDiffusionSolver, "
+    headers += "Filename, iGrainGrowth, iFissionGasDiffusivity, iDiffusionSolver, "
         "iIntraGranularBubbleBehavior, iResolutionRate, iTrappingRate, iNucleationRate, "
         "iOutput, iGrainBoundaryVacancyDiffusivity, iGrainBoundaryBehaviour, "
         "iGrainBoundaryMicroCracking, iFuelMatrix, iGrainBoundaryVenting, iRadioactiveFissionGas, " 
         "iHelium, iHeDiffusivity, iGrainBoundarySweeping, iHighBurnupStructureFormation, "
         "iHighBurnupStructurePorosity, iHeliumProductionRate, iStoichiometryDeviation, "
         "iBubbledifusivity, iChromiumSolubility";
-    values << filename << ", "
-         << Sciantix_options[0] << ", "
-         << Sciantix_options[1] << ", "
-         << Sciantix_options[2] << ", "
-         << Sciantix_options[3] << ", "
-         << Sciantix_options[4] << ", "
-         << Sciantix_options[5] << ", "
-         << Sciantix_options[6] << ", "
-         << Sciantix_options[7] << ", "
-         << Sciantix_options[8] << ", "
-         << Sciantix_options[9] << ", "
-         << Sciantix_options[10] << ", "
-         << Sciantix_options[11] << ", "
-         << Sciantix_options[12] << ", "
-         << Sciantix_options[13] << ", "
-         << Sciantix_options[14] << ", "
-         << Sciantix_options[15] << ", "
-         << Sciantix_options[16] << ", "
-         << Sciantix_options[17] << ", "
-         << Sciantix_options[18] << ", "
-         << Sciantix_options[19] << ", "
-         << Sciantix_options[20] << ", "
-         << Sciantix_options[21] << ", "
-         << Sciantix_options[22] << std::endl;
-    file << "\n";
-
+    values += filename;
+    values += ",";
+    for (int i = 0; i < 160; i++) {
+        values += std::to_string(Sciantix_options[i]);
+        values += ",";
+    }
+         
+/*
     // write history to CSV
     file << "Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa), "
             "Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa)" << std::endl;
@@ -327,7 +309,7 @@ void inputToCSV(std::string filename) {
     // write scaling factors to CSV
     file << headers << std::endl;
     file << values << std::endl;
- 
+ */
     // close file
     delete[] Sciantix_options;
     file.close();
