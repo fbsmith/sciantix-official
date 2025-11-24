@@ -260,7 +260,7 @@ void inputToCSV(std::string filename) {
         "iGrainBoundaryMicroCracking, iFuelMatrix, iGrainBoundaryVenting, iRadioactiveFissionGas, " 
         "iHelium, iHeDiffusivity, iGrainBoundarySweeping, iHighBurnupStructureFormation, "
         "iHighBurnupStructurePorosity, iHeliumProductionRate, iStoichiometryDeviation, "
-        "iBubbledifusivity, iChromiumSolubility";
+        "iBubbledifusivity, iChromiumSolubility,";
     values += filename;
     values += ",";
     for (int i = 0; i < 22; i++) {
@@ -270,7 +270,7 @@ void inputToCSV(std::string filename) {
          
     // write history to CSV
     headers += "Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa), "
-            "Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa)";
+            "Time (hr), Temperature (K), Fission Rate (fissions/m^3/s), Hydrostatic Stress (MPa),";
     for (int i = 0; i < 7; i++) {
         values += std::to_string(Sciantix_history[i]);
         values += ",";
@@ -301,9 +301,11 @@ void inputToCSV(std::string filename) {
             "Xe in HBS pores - variance (at^2/m3), Xe atoms per HBS pore (at/pore), Xe atoms per HBS pore - variance (at^2/pore) "
             "Chromium content (µg/g), Lattice parameter (m), Theoretical density (kg/m3), Chromium solubility (% weight/UO2) "
             "Chromia solubility (% weight/UO2), Chromium solution (at/m3), Chromium precipitate (at/m3), Chromia solution (at/m3) "
-            "Chromia precipitate (at/m3), Diffusion coefficient (m2/s)";
-    values += std::to_string(Sciantix_variables[0]);
-    values += ",";
+            "Chromia precipitate (at/m3), Diffusion coefficient (m2/s),";
+    
+    headers += "Grain radius (m),";
+    values += std::to_string(Sciantix_variables[0]) +  ",";    
+    
     values += std::to_string(Sciantix_variables[1]);
     values += ",";
     values += std::to_string(Sciantix_variables[100]);
@@ -484,11 +486,16 @@ void inputToCSV(std::string filename) {
 
     // write scaling factors to CSV
     headers += "Resolution rate, Trapping rate, Nucleation rate, Diffusivity, Temperature, " 
-               "Fission rate, Cent parameter, Helium production rate, Dummy";
+               "Fission rate, Cent parameter, Helium production rate, Dummy,";
     for (int i = 0; i < 8; i++) {
         values += std::to_string(Sciantix_history[i]);
         values += ",";
     }
+
+    headers += "\n";
+    values += "\n";
+    file << headers;
+    file << values;
 
     // close file
     delete[] Sciantix_options;
