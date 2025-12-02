@@ -397,9 +397,9 @@ void inputToCSV(std::string filename) {
 
     // write scaling factors to CSV
     headers += "Resolution rate, Trapping rate, Nucleation rate, Diffusivity, Temperature, " 
-               "Fission rate, Cent parameter, Helium production rate, Dummy,";
+               "Fission rate, Cent parameter, Helium production rate,";
     for (int i = 0; i < 9; i++) {
-        values += std::to_string(Sciantix_history[i]);
+        values += std::to_string(Sciantix_scaling_factors[i]);
         values += ",";
     }
 
