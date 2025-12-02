@@ -176,6 +176,228 @@ double* getSciantixVariables() {
     return Sciantix_variables;
 }
 
+std::string* getSciantixVariablesStrings() {
+    std::string headers = "";
+    std::string values  = "";
+    double* Sciantix_variables = getSciantixVariables();
+    
+    /******************** Grain Radius ********************/
+    headers += "Grain radius (m),";
+    values += std::to_string(Sciantix_variables[0]) +  ",";
+    
+    /******************** Xe Variables ********************/
+    headers += "Xe produced (at/m3),";
+    values += std::to_string(Sciantix_variables[1]) +  ",";
+    headers += "Xe produced in HBS (at/m3),";
+    values += std::to_string(Sciantix_variables[100]) +  ",";
+    headers += "Xe in grain (at/m3),";
+    values += std::to_string(Sciantix_variables[2]) +  ",";
+    headers += "Xe in grain HBS (at/m3),";
+    values += std::to_string(Sciantix_variables[92]) +  ",";
+    headers += "Xe in intragranular solution (at/m3),";
+    values += std::to_string(Sciantix_variables[3]) +  ",";
+    headers += "Xe in intragranular bubbles (at/m3),";
+    values += std::to_string(Sciantix_variables[4]) +  ",";
+    headers += "Xe at grain boundary (at/m3),";
+    values += std::to_string(Sciantix_variables[5]) +  ",";
+    headers += "Xe released (at/m3),";
+    values += std::to_string(Sciantix_variables[6]) +  ",";
+    headers += "Xe decayed initialized at 0.0,";
+    values += std::to_string(0.0) + ",";
+    
+    /******************** Kr Variables ********************/
+    headers += "Kr produced (at/m3),";
+    values += std::to_string(Sciantix_variables[7]) +  ",";
+    headers += "Kr in grain (at/m3),";
+    values += std::to_string(Sciantix_variables[8]) +  ",";
+    headers += "Kr in intragranular solution (at/m3),";
+    values += std::to_string(Sciantix_variables[9]) +  ",";
+    headers += "Kr in intragranular bubbles (at/m3),";
+    values += std::to_string(Sciantix_variables[10]) +  ",";
+    headers += "Kr at grain boundary (at/m3),";
+    values += std::to_string(Sciantix_variables[11]) +  ",";
+    headers += "Kr released (at/m3),";
+    values += std::to_string(Sciantix_variables[12]) +  ",";
+    headers += "Kr decayed initialized at 0.0,";
+    values += std::to_string(0.0) + ",";
+
+    /******************** He Variables ********************/
+    headers += "He produced (at/m3),";
+    values += std::to_string(Sciantix_variables[13]) +  ",";
+    headers += "He in grain (at/m3),";
+    values += std::to_string(Sciantix_variables[14]) +  ",";
+    headers += "He in intragranular solution (at/m3),";
+    values += std::to_string(Sciantix_variables[15]) +  ",";
+    headers += "He in intragranular bubbles (at/m3),";
+    values += std::to_string(Sciantix_variables[16]) +  ",";
+    headers += "He at grain boundary (at/m3),";
+    values += std::to_string(Sciantix_variables[17]) +  ",";
+    headers += "He at grain boundary (alias/variant) (at/m3),";
+    values += std::to_string(Sciantix_variables[71]) +  ",";
+    headers += "He released (at/m3),";
+    values += std::to_string(Sciantix_variables[18]) +  ",";
+    headers += "He decayed initialized at 0.0,";
+    values += std::to_string(0.0) + ",";
+
+    /******************** Xe133 Variables ********************/
+    headers += "Xe133 produced (at/m3),";
+    values += std::to_string(Sciantix_variables[48]) +  ",";
+    headers += "Xe133 in grain (at/m3),";
+    values += std::to_string(Sciantix_variables[49]) +  ",";
+    headers += "Xe133 in intragranular solution (at/m3),";
+    values += std::to_string(Sciantix_variables[50]) +  ",";
+    headers += "Xe133 in intragranular bubbles (at/m3),";
+    values += std::to_string(Sciantix_variables[51]) +  ",";
+    headers += "Xe133 decayed (at/m3),";
+    values += std::to_string(Sciantix_variables[52]) +  ",";
+    headers += "Xe133 at grain boundary (at/m3),";
+    values += std::to_string(Sciantix_variables[53]) +  ",";
+    headers += "Xe133 released (at/m3),";
+    values += std::to_string(Sciantix_variables[54]) +  ",";
+
+    /******************** Kr85m Variables ********************/
+    headers += "Kr85m produced (at/m3),";
+    values += std::to_string(Sciantix_variables[57]) +  ",";    
+    headers += "Kr85m in grain (at/m3),";
+    values += std::to_string(Sciantix_variables[58]) +  ",";
+    headers += "Kr85m in intragranular solution (at/m3),";
+    values += std::to_string(Sciantix_variables[59]) +  ",";
+    headers += "Kr85m in intragranular bubbles (at/m3),";
+    values += std::to_string(Sciantix_variables[60]) +  ",";
+    headers += "Kr85m decayed (at/m3),";
+    values += std::to_string(Sciantix_variables[61]) +  ",";
+    headers += "Kr85m at grain boundary (at/m3),";
+    values += std::to_string(Sciantix_variables[62]) +  ",";
+    headers += "Kr85m released (at/m3),";
+    values += std::to_string(Sciantix_variables[63]) +  ",";
+
+    /******************** Intragranular Bubbles ********************/
+    headers += "Intragranular bubble concentration (bub/m3),";
+    values += std::to_string(Sciantix_variables[19]) +  ",";
+    headers += "Intragranular bubble radius (m),";
+    values += std::to_string(Sciantix_variables[20]) +  ",";
+    headers += "Xe atoms per intragranular bubble,";
+    values += std::to_string(Sciantix_variables[21]) +  ",";
+    headers += "Kr atoms per intragranular bubble,";
+    values += std::to_string(Sciantix_variables[22]) +  ",";
+    headers += "He atoms per intragranular bubble,";
+    values += std::to_string(Sciantix_variables[23]) +  ",";
+    headers += "Intragranular gas bubble swelling (%),";
+    values += std::to_string(Sciantix_variables[24]) +  ",";
+    headers += "Intragranular gas solution swelling (%),";
+    values += std::to_string(Sciantix_variables[68]) +  ",";
+
+    /******************** Intergranular Bubbles ********************/
+    headers += "Intergranular bubble concentration (bub/m2),";
+    values += std::to_string(Sciantix_variables[25]) +  ",";
+    headers += "Xe atoms per intergranular bubble,";
+    values += std::to_string(Sciantix_variables[26]) +  ",";    
+    headers += "Kr atoms per intergranular bubble,";
+    values += std::to_string(Sciantix_variables[27]) +  ",";
+    headers += "He atoms per intergranular bubble,";
+    values += std::to_string(Sciantix_variables[28]) +  ",";
+    headers += "Intergranular atoms per bubble,";
+    values += std::to_string(Sciantix_variables[29]) +  ",";
+    headers += "Intergranular vacancies per bubble,";
+    values += std::to_string(Sciantix_variables[30]) +  ",";
+    headers += "Intergranular bubble radius (m),";
+    values += std::to_string(Sciantix_variables[31]) +  ",";
+    headers += "Intergranular bubble area (m2),";
+    values += std::to_string(Sciantix_variables[32]) +  ",";
+    headers += "Intergranular bubble volume (m3),";
+    values += std::to_string(Sciantix_variables[33]) +  ",";
+    headers += "Intergranular fractional coverage (%),";
+    values += std::to_string(Sciantix_variables[34]) +  ",";
+    headers += "Intergranular saturation fractional coverage (%),";
+    values += std::to_string(Sciantix_variables[35]) +  ",";
+    headers += "Intergranular gas swelling (%),";
+    values += std::to_string(Sciantix_variables[36]) +  ",";
+    headers += "Intergranular fractional intactness (%),";
+    values += std::to_string(Sciantix_variables[37]) +  ",";
+
+    /******************** Burnup and Material Properties ********************/
+    headers += "Burnup (MWd/kgUO2),";
+    values += std::to_string(Sciantix_variables[38]) +  ",";
+    headers += "FIMA (%),";
+    values += std::to_string(Sciantix_variables[69]) +  ",";
+    headers += "Effective burnup (MWd/kgUO2),";
+    values += std::to_string(Sciantix_variables[39]) +  ",";
+    headers += "Irradiation time (h),";
+    values += std::to_string(Sciantix_variables[65]) +  ",";
+    headers += "Fuel density (kg/m3),";
+    values += std::to_string(Sciantix_variables[40]) +  ",";
+    headers += "U234 (at/m3),";
+    values += std::to_string(Sciantix_variables[41]) +  ",";
+    headers += "U235 (at/m3),";
+    values += std::to_string(Sciantix_variables[42]) +  ",";
+    headers += "U236 (at/m3),";
+    values += std::to_string(Sciantix_variables[43]) +  ",";
+    headers += "U237 (at/m3),";
+    values += std::to_string(Sciantix_variables[44]) +  ",";
+    headers += "U238 (at/m3),";
+    values += std::to_string(Sciantix_variables[45]) +  ",";
+
+    /******************** Intergranular Venting ********************/
+    headers += "Intergranular vented fraction (%),";
+    values += std::to_string(Sciantix_variables[46]) +  ",";
+    headers += "Intergranular venting probability (%),";
+    values += std::to_string(Sciantix_variables[47]) +  ",";
+    
+    /******************** HBS Structure ********************/
+    headers += "Restructured volume fraction (%),";
+    values += std::to_string(Sciantix_variables[55]) +  ",";
+    headers += "Intragranular similarity ratio (%),";
+    values += std::to_string(Sciantix_variables[64]) +  ",";
+    headers += "Stoichiometry deviation (%),";
+    values += std::to_string(Sciantix_variables[66]) +  ",";
+    headers += "Fuel oxygen partial pressure (MPa),";
+    values += std::to_string(Sciantix_variables[67]) +  ",";
+    headers += "HBS porosity (%),";
+    values += std::to_string(Sciantix_variables[56]) +  ",";
+    headers += "HBS pore density (pores/m3),";
+    values += std::to_string(Sciantix_variables[80]) +  ",";
+    headers += "HBS pore volume (m3),";
+    values += std::to_string(Sciantix_variables[81]) +  ",";
+    headers += "HBS pore radius (m),";
+    values += std::to_string(Sciantix_variables[82]) +  ",";
+    headers += "Xe in HBS pores (at/m3),";
+    values += std::to_string(Sciantix_variables[83]) +  ",";
+    headers += "Xe in HBS pores - variance (at^2/m3),";
+    values += std::to_string(Sciantix_variables[85]) +  ",";
+    headers += "Xe atoms per HBS pore (at/pore),";
+    values += std::to_string(Sciantix_variables[86]) +  ",";
+    headers += "Xe atoms per HBS pore - variance (at^2/pore),";
+    values += std::to_string(Sciantix_variables[88]) +  ",";
+
+    /******************** Chromium & Lattice ********************/
+    headers += "Chromium content (µg/g),";
+    values += std::to_string(Sciantix_variables[150]) +  ",";
+    headers += "Lattice parameter (m),";
+    values += std::to_string(Sciantix_variables[151]) +  ",";
+    headers += "Theoretical density (kg/m3),";
+    values += std::to_string(Sciantix_variables[152]) +  ",";
+    headers += "Chromium solubility (% weight/UO2),";
+    values += std::to_string(Sciantix_variables[153]) +  ",";
+    headers += "Chromia solubility (% weight/UO2),";
+    values += std::to_string(Sciantix_variables[154]) +  ",";
+    headers += "Chromium solution (at/m3),";
+    values += std::to_string(Sciantix_variables[155]) +  ",";
+    headers += "Chromium precipitate (at/m3),";
+    values += std::to_string(Sciantix_variables[156]) +  ",";
+    headers += "Chromia solution (at/m3),";
+    values += std::to_string(Sciantix_variables[157]) +  ",";
+    headers += "Chromia precipitate (at/m3),";
+    values += std::to_string(Sciantix_variables[158]) +  ",";
+
+    /******************** Diffusion ********************/
+    headers += "Diffusion coefficient (m2/s),";
+    values += std::to_string(Sciantix_variables[160]) + ",";
+
+    delete[] Sciantix_variables;
+
+    return new std::string[2]{headers, values};
+}
+
 double* getSciantixScalingFactors() {
     double* Sciantix_scaling_factors = new double[9];
     Sciantix_scaling_factors[0] = 1.0;   // scaling factor - resolution rate
@@ -239,16 +461,11 @@ void inputToCSV(std::string filename) {
     std::string values = "";
 
     // make file
-    int* Sciantix_options = getSciantixOptions();
-    double* Sciantix_history = getSciantixHistory();
-    double* Sciantix_variables = getSciantixVariables();
-    double* Sciantix_scaling_factors = getSciantixVariables();
     std::ofstream file(filename);
 
     // check if file opened successfully
     if (!file.is_open()) {
         std::cerr << "Error creating file: " << filename << std::endl;
-        delete[] Sciantix_options;
         return;
     }
 
@@ -263,145 +480,38 @@ void inputToCSV(std::string filename) {
             "iBubbledifusivity,iChromiumSolubility,";
     values += filename;
     values += ",";
+    int* Sciantix_options = getSciantixOptions();
     for (int i = 0; i < 23; i++) {
         values += std::to_string(Sciantix_options[i]);
         values += ",";
     }
-         
+    delete[] Sciantix_options;
+
     // write history to CSV
     headers += "Time (hr),Temperature (K),Fission Rate (fissions/m^3/s),Hydrostatic Stress (MPa),"
             "Time (hr),Temperature (K),Fission Rate (fissions/m^3/s),Hydrostatic Stress (MPa),";
+    double* Sciantix_history = getSciantixHistory();
     for (int i = 0; i < 8; i++) {
         values += std::to_string(Sciantix_history[i]);
         values += ",";
     }
+    delete[] Sciantix_history;
 
     // write variables to CSV
-    headers += "Grain radius (m),Xe produced (at/m3),Xe produced in HBS (at/m3),Xe in grain (at/m3),Xe in grain HBS (at/m3),"
-            "Xe in intragranular solution (at/m3),Xe in intragranular bubbles (at/m3),Xe at grain boundary (at/m3),"
-            "Xe released (at/m3),Kr produced (at/m3),Kr in grain (at/m3),Kr in intragranular solution (at/m3),"
-            "Kr in intragranular bubbles (at/m3),Kr at grain boundary (at/m3),Kr released (at/m3),"
-            "He produced (at/m3),He in grain (at/m3),He in intragranular solution (at/m3),He in intragranular bubbles (at/m3),"
-            "He at grain boundary (at/m3),He at grain boundary (alias/variant) (at/m3),He released (at/m3),"
-            "Xe133 produced (at/m3),Xe133 in grain (at/m3),Xe133 in intragranular solution (at/m3),"
-            "Xe133 in intragranular bubbles (at/m3),Xe133 decayed (at/m3),Xe133 at grain boundary (at/m3),Xe133 released (at/m3),"
-            "Kr85m produced (at/m3),Kr85m in grain (at/m3),Kr85m in intragranular solution (at/m3),Kr85m in intragranular bubbles (at/m3),"
-            "Kr85m decayed (at/m3),Kr85m at grain boundary (at/m3),Kr85m released (at/m3),Intragranular bubble concentration (bub/m3),"
-            "Intragranular bubble radius (m),Xe atoms per intragranular bubble,Kr atoms per intragranular bubble,"
-            "He atoms per intragranular bubble,Intragranular gas bubble swelling,Intragranular gas solution swelling,"
-            "Intergranular bubble concentration (bub/m2),Xe atoms per intergranular bubble,Kr atoms per intergranular bubble,"
-            "He atoms per intergranular bubble,Intergranular atoms per bubble,Intergranular vacancies per bubble,"
-            "Intergranular bubble radius (m),Intergranular bubble area (m2),Intergranular bubble volume (m3),"
-            "Intergranular fractional coverage,Intergranular saturation fractional coverage,Intergranular gas swelling,"
-            "Intergranular fractional intactness,Burnup (MWd/kgUO2),FIMA (%),Effective burnup (MWd/kgUO2),"
-            "Irradiation time (h),Fuel density (kg/m3),U234 (at/m3),U235 (at/m3),U236 (at/m3),U237 (at/m3),U238 (at/m3),"
-            "Intergranular vented fraction,Intergranular venting probability,Restructured volume fraction,"
-            "Intragranular similarity ratio,Stoichiometry deviation,Fuel oxygen partial pressure (MPa),HBS porosity,"
-            "HBS pore density (pores/m3),HBS pore volume (m3),HBS pore radius (m),Xe in HBS pores (at/m3),"
-            "Xe in HBS pores - variance (at^2/m3),Xe atoms per HBS pore (at/pore),Xe atoms per HBS pore - variance (at^2/pore),"
-            "Chromium content (µg/g),Lattice parameter (m),Theoretical density (kg/m3),Chromium solubility (% weight/UO2),"
-            "Chromia solubility (% weight/UO2),Chromium solution (at/m3),Chromium precipitate (at/m3),Chromia solution (at/m3),"
-            "Chromia precipitate (at/m3),Diffusion coefficient (m2/s),";
-    
-    // headers += "Grain radius (m),";
-    values += std::to_string(Sciantix_variables[0]) +  ",";    
-    values += std::to_string(Sciantix_variables[1]) + ",";
-    values += std::to_string(Sciantix_variables[100]) + ",";
-    values += std::to_string(Sciantix_variables[2]) + ",";
-    values += std::to_string(Sciantix_variables[92]) + ",";
-    values += std::to_string(Sciantix_variables[3]) + ",";
-    values += std::to_string(Sciantix_variables[4]) + ",";
-    values += std::to_string(Sciantix_variables[5]) + ",";
-    values += std::to_string(Sciantix_variables[6]) + ",";
-    values += std::to_string(Sciantix_variables[7]) + ",";
-    values += std::to_string(Sciantix_variables[8]) + ",";
-    values += std::to_string(Sciantix_variables[9]) + ",";
-    values += std::to_string(Sciantix_variables[10]) + ",";
-    values += std::to_string(Sciantix_variables[11]) + ",";
-    values += std::to_string(Sciantix_variables[12]) + ",";
-    values += std::to_string(Sciantix_variables[13]) + ",";
-    values += std::to_string(Sciantix_variables[14]) + ",";
-    values += std::to_string(Sciantix_variables[15]) + ",";
-    values += std::to_string(Sciantix_variables[16]) + ",";
-    values += std::to_string(Sciantix_variables[17]) + ",";
-    values += std::to_string(Sciantix_variables[71]) + ",";
-    values += std::to_string(Sciantix_variables[18]) + ",";
-    values += std::to_string(Sciantix_variables[48]) + ",";
-    values += std::to_string(Sciantix_variables[49]) + ",";
-    values += std::to_string(Sciantix_variables[50]) + ",";
-    values += std::to_string(Sciantix_variables[51]) + ",";
-    values += std::to_string(Sciantix_variables[52]) + ",";
-    values += std::to_string(Sciantix_variables[53]) + ",";
-    values += std::to_string(Sciantix_variables[54]) + ",";
-    values += std::to_string(Sciantix_variables[57]) + ",";
-    values += std::to_string(Sciantix_variables[58]) + ",";
-    values += std::to_string(Sciantix_variables[59]) + ",";
-    values += std::to_string(Sciantix_variables[60]) + ",";
-    values += std::to_string(Sciantix_variables[61]) + ",";
-    values += std::to_string(Sciantix_variables[62]) + ",";
-    values += std::to_string(Sciantix_variables[63]) + ",";
-    values += std::to_string(Sciantix_variables[19]) + ",";
-    values += std::to_string(Sciantix_variables[20]) + ",";
-    values += std::to_string(Sciantix_variables[21]) + ",";
-    values += std::to_string(Sciantix_variables[22]) + ",";
-    values += std::to_string(Sciantix_variables[23]) + ",";
-    values += std::to_string(Sciantix_variables[24]) + ",";
-    values += std::to_string(Sciantix_variables[68]) + ",";
-    values += std::to_string(Sciantix_variables[25]) + ",";
-    values += std::to_string(Sciantix_variables[26]) + ",";
-    values += std::to_string(Sciantix_variables[27]) + ",";
-    values += std::to_string(Sciantix_variables[28]) + ",";
-    values += std::to_string(Sciantix_variables[29]) + ",";
-    values += std::to_string(Sciantix_variables[30]) + ",";
-    values += std::to_string(Sciantix_variables[31]) + ",";
-    values += std::to_string(Sciantix_variables[32]) + ",";
-    values += std::to_string(Sciantix_variables[33]) + ",";
-    values += std::to_string(Sciantix_variables[34]) + ",";
-    values += std::to_string(Sciantix_variables[35]) + ",";
-    values += std::to_string(Sciantix_variables[36]) + ",";
-    values += std::to_string(Sciantix_variables[37]) + ",";
-    values += std::to_string(Sciantix_variables[38]) + ",";
-    values += std::to_string(Sciantix_variables[69]) + ",";
-    values += std::to_string(Sciantix_variables[39]) + ",";
-    values += std::to_string(Sciantix_variables[65]) + ",";
-    values += std::to_string(Sciantix_variables[40]) + ",";
-    values += std::to_string(Sciantix_variables[41]) + ",";
-    values += std::to_string(Sciantix_variables[42]) + ",";
-    values += std::to_string(Sciantix_variables[43]) + ",";
-    values += std::to_string(Sciantix_variables[44]) + ",";
-    values += std::to_string(Sciantix_variables[45]) + ",";
-    values += std::to_string(Sciantix_variables[46]) + ",";
-    values += std::to_string(Sciantix_variables[47]) + ",";
-    values += std::to_string(Sciantix_variables[55]) + ",";
-    values += std::to_string(Sciantix_variables[64]) + ",";
-    values += std::to_string(Sciantix_variables[66]) + ",";
-    values += std::to_string(Sciantix_variables[67]) + ",";
-    values += std::to_string(Sciantix_variables[56]) + ",";
-    values += std::to_string(Sciantix_variables[80]) + ",";
-    values += std::to_string(Sciantix_variables[81]) + ",";
-    values += std::to_string(Sciantix_variables[82]) + ",";
-    values += std::to_string(Sciantix_variables[83]) + ",";
-    values += std::to_string(Sciantix_variables[85]) + ",";
-    values += std::to_string(Sciantix_variables[86]) + ",";
-    values += std::to_string(Sciantix_variables[88]) + ",";
-    values += std::to_string(Sciantix_variables[150]) + ",";
-    values += std::to_string(Sciantix_variables[151]) + ",";
-    values += std::to_string(Sciantix_variables[152]) + ",";
-    values += std::to_string(Sciantix_variables[153]) + ",";
-    values += std::to_string(Sciantix_variables[154]) + ",";
-    values += std::to_string(Sciantix_variables[155]) + ",";
-    values += std::to_string(Sciantix_variables[156]) + ",";
-    values += std::to_string(Sciantix_variables[157]) + ",";
-    values += std::to_string(Sciantix_variables[158]) + ",";
-    values += std::to_string(Sciantix_variables[160]);
+    std::string* variable_string = getSciantixVariablesStrings();
+    headers += variable_string[0];
+    values  += variable_string[1];
+    delete[] variable_string;
 
     // write scaling factors to CSV
     headers += "Resolution rate, Trapping rate, Nucleation rate, Diffusivity, Temperature, " 
-               "Fission rate, Cent parameter, Helium production rate,";
+               "Fission rate, Cent parameter, Helium production rate, Dummy,";
+    double* Sciantix_scaling_factors = getSciantixScalingFactors();
     for (int i = 0; i < 9; i++) {
         values += std::to_string(Sciantix_scaling_factors[i]);
         values += ",";
     }
+    delete[] Sciantix_scaling_factors;
 
     headers += "\n";
     values += "\n";
@@ -409,7 +519,6 @@ void inputToCSV(std::string filename) {
     file << values;
 
     // close file
-    delete[] Sciantix_options;
     file.close();
 }
 
@@ -461,11 +570,11 @@ int main() {
 
     printf("SCIANTIX output processed successfully.\n\n");
 
-    delete(Sciantix_options);
-    delete(Sciantix_history);
-    delete(Sciantix_variables);
-    delete(Sciantix_scaling_factors);
-    delete(Sciantix_diffusion_modes);
+    delete[] Sciantix_options;
+    delete[] Sciantix_history;
+    delete[] Sciantix_variables;
+    delete[] Sciantix_scaling_factors;
+    delete[] Sciantix_diffusion_modes;
     
     return 0;
 }
