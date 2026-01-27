@@ -524,8 +524,18 @@ void inputToCSV(std::string filename) {
 
 void outputToCSV(std::string filename) {
     // open CSV file
-
+std::string headers = "";
+std::string values = "";
     // write variables to CSV
+headers += "Time (h), Temperature (K), Fission rate (fiss / m3 s), Hydrostatic stress (MPa), Grain radius (m), "
+           "Xe produced (at/m3), Xe in grain (at/m3), Xe in intragranular solution (at/m3), Xe in intragranular bubbles (at/m3), "
+           "Xe at grain boundary (at/m3), Xe released (at/m3), Kr produced (at/m3), "
+           "Kr in grain (at/m3), Kr in intragranular solution (at/m3), Kr in intragranular bubbles (at/m3), Kr at grain boundary (at/m3), "
+           "Kr released (at/m3), Fission gas release (/), Intragranular bubble concentration (bub/m3), Intragranular bubble radius (m), "	
+           "Intragranular gas bubble swelling (/), Intergranular bubble concentration (bub/m2), Intergranular atoms per bubble (at/bub), "
+           "Intergranular vacancies per bubble (vac/bub), Intergranular bubble radius (m), Intergranular bubble area (m2), "
+           "Intergranular bubble volume (m3), Intergranular fractional coverage (/), Intergranular saturation fractional coverage (/), "
+           "Intergranular gas swelling (/), Intergranular fractional intactness (/), Burnup (MWd/kgUO2)	U235 (at/m3), U238 (at/m3)";
 
     // close file
 }
