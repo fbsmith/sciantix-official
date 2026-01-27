@@ -91,7 +91,7 @@ latex
 # Folders
 bin/
 obj/
-build/*
+build/
 out/
 documentation/
 >>>>>>> 917de596 (Added more exceptions to the .gitignore)
