@@ -148,4 +148,9 @@ main
 
 # Temporary data dump file
 filename.csv
+<<<<<<< HEAD
 >>>>>>> 1220abec (Fixed bug in exporting parameters to csv file)
+=======
+**/error_log.txt
+**/input_check.txt
+>>>>>>> 15897ab4 (We need these local files)
