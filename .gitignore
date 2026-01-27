@@ -122,3 +122,7 @@ main
 # Other files to ignore
 *.json
 
+# Temporary data dump file
+filename.csv
+**/error_log.txt
+**/input_check.txt
