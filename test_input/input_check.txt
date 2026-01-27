@@ -20,8 +20,8 @@ iHighBurnupStructurePorosity = 0
 iHeliumProductionRate = 0
 iStoichiometryDeviation = 0
 iBubbleDiffusivity = 0
-iChromiumSolubility = 0
-Grain radius[0] = 5e-06
+iChromiumSolubility = 64220
+Grain radius[0] = 5e-006
 Initial composition Xe0 = 0
 Initial composition Xe1 = 0
 Initial composition Xe2 = 0
@@ -62,9 +62,9 @@ Initial composition Kr85m4 = 0
 Initial composition Kr85m5 = 0
 Initial composition Kr85m6 = 0
 Initial stoichiometry deviation[0] = 0
-Chromium content = 9.88131e-324
-0	1373	1e+19	0	
-5500	1373	1e+19	0	
+Chromium content = 0
+0	1273	1e+019	0	
+5500	1273	1e+019	0	
 sf_resolution_rate = 1
 sf_trapping_rate = 1
 sf_nucleation_rate = 1
@@ -74,4 +74,4 @@ sf_temperature = 1
 sf_fission_rate = 1
 sf_cent_parameter = 1
 sf_helium_production_rate = 1
-sf_dummy = 9.88131e-324
+sf_dummy = 1
