@@ -1,5 +1,10 @@
-Literature Summary
+-------------------------------------------------------------------------------
+                                Literature Summary
+-------------------------------------------------------------------------------
 
+-----------------------------------------------------------
+                      Temperature
+-----------------------------------------------------------
 Temperature transients in TRISO type fuel
 Garcia-Berrocal 2015
 High temperature of 2000 deg C
@@ -7,3 +12,28 @@ High temperature of 2000 deg C
 High-Temperature Safety Tests of Irradiated AGR-1 TRISO fuel
 Stempien 2016
 Temperatures from room temp to 1700 deg C
+
+-----------------------------------------------------------
+                      Fission Release
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+                      Fission Rate
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+                      Hydrostatic Stress
+-----------------------------------------------------------
+- operating pressure inside a reactor
+- UO2 fill gas pressure
+- TRISO pressure build-up in fuel
+
+-----------------------------------------------------------
+                            FIMA
+-----------------------------------------------------------
+Fissions per
+Initial
+Metal
+Atom
+
+usually found as a % or a value between 0 and 1
