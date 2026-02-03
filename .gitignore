@@ -153,4 +153,17 @@ filename.csv
 =======
 **/error_log.txt
 **/input_check.txt
+<<<<<<< HEAD
 >>>>>>> 15897ab4 (We need these local files)
+=======
+
+# Data files from running sciantix. If you need input files back, restore from test_inputs/default
+test_input/execution.txt
+test_input/input_check.txt
+test_input/input_history.txt
+test_input/input_initial_conditions.txt
+test_input/input_scaling_factors.txt
+test_input/input_settings.txt
+test_input/output.txt
+test_input/overview.txt
+>>>>>>> 6003c336 (Removing input files from being tracked. If need backups, go to test_input/default)
