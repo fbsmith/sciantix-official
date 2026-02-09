@@ -20,6 +20,11 @@ class ODEFunc(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(2, 500),
             nn.Tanh(),
+<<<<<<< HEAD
+=======
+            nn.Linear(500, 500),
+            nn.Tanh(),
+>>>>>>> 54ca0f2 (Leveraged ChatGPT to get a working NeuralODE)
             nn.Linear(500, 2),
         )
     
