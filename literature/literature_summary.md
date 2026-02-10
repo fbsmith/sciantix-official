@@ -28,14 +28,14 @@ Initial
 Metal
 Atom
 
-Metallic phases precipitated in UO2 fuel: II. Insoluble residue in simulated fuel
-Adachi 1988
-Burnups from 5% to 30% FIMA
-
-The effect of additives on the irradiation behaviour of UO2
-Killeen 1975
-Samples of UO2 irradiated to 0.1 FIMA
+| Description | Value    | Author  | Year | Title |
+|:------------|:--------:|:--------|:----:|:------|
+| Samples of UO2 irradiated to 0.1 FIMA | 0.1      | Killeen | 1975 | The effect of additives on the irradiation behaviour of UO2 |
 
 
 ## Burnup
 usually found as a % or a value between 0 and 1
+
+| Value    | Author | Year | Title |
+|:--------:|:-------|:----:|:------|
+| 5 to 30% | Adachi | 1988 | Metallic phases precipitated in UO2 fuel: II. Insoluble residue in simulated fuel |
