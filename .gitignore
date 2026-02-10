@@ -7,6 +7,9 @@
 *.obj
 *.lo
 *.slo
+*.make
+*.a
+*.cmake
 
 # Dependency files
 *.d
@@ -27,6 +30,11 @@
 # Fortran modules
 *.mod
 *.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.lib
 
 # Executables
 *.exe
@@ -85,9 +93,17 @@ __pycache__/
 # Editors / IDEs
 ########################################
 
+#doxygen
+latex
+
+# Folders
+bin/
+obj/
+build/
+out/
+documentation/
 .vscode/
 .vs/
-
 
 ########################################
 # OS / misc junk
@@ -108,13 +124,16 @@ out/
 # its plots into <group>/figures/ and plotter.sh rebuilds the lot. Nothing under a
 # figures/ directory is meant to be committed.
 *.png
-# NUS parametric studies: generated cases and their outputs
-regression/nus/studies/runs/
+old_files/
+__pycache__/
+optimization
+GSA_output_files/
 
 # Generated files in driver
 driver/sciantix_driver
 driver/output.txt
 driver/overview.txt
+sciantix_driver
 output.txt
 overview.txt
 main
@@ -124,5 +143,17 @@ main
 
 # Temporary data dump file
 filename.csv
-**/error_log.txt
-**/input_check.txt
+
+# Data files from running sciantix. If you need input files back, restore from test_inputs/default
+test_input/execution.txt
+test_input/input_check.txt
+test_input/input_history.txt
+test_input/input_initial_conditions.txt
+test_input/input_scaling_factors.txt
+test_input/input_settings.txt
+test_input/output.txt
+test_input/overview.txt
+
+# Regression test output files
+regression/*/output.txt
+
