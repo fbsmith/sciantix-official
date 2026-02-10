@@ -137,7 +137,7 @@ the significant change from the default/baseline conditions.
 
 ```bash
 mkdir 1323K
-cp input_* output.txt overview.txt 1323K
+cp input_* output.txt overview.txt execution.txt 1323K
 ```
 
 You have successfully run Sciantix and collected data!
