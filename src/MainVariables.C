@@ -23,9 +23,15 @@ double Sciantix_scaling_factors[SCIANTIX_SCALING_FACTORS_SIZE];
 double Sciantix_diffusion_modes[SCIANTIX_DIFFUSION_MODES_SIZE];
 
 long long int Time_step_number(0);
+<<<<<<< HEAD
 double        Time_h(0.0), dTime_h(0.0), Time_end_h(0.0);  // (h)
 double        Time_s(0.0), Time_end_s(0.0);                // (s)
 double        Number_of_time_steps_per_interval(100);
+=======
+double  Time_h(0.0), dTime_h(0.0), Time_end_h(0.0); // (h)
+double  Time_s(0.0), Time_end_s(0.0); // (s)
+double  Number_of_time_steps_per_interval(50000);
+>>>>>>> ce2a428a (Updated number of time steps taken by sciantix)
 
 std::ofstream Output_file;
 std::ofstream Execution_file;
