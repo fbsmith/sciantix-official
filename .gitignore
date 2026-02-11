@@ -166,4 +166,10 @@ test_input/input_scaling_factors.txt
 test_input/input_settings.txt
 test_input/output.txt
 test_input/overview.txt
+<<<<<<< HEAD
 >>>>>>> 6003c336 (Removing input files from being tracked. If need backups, go to test_input/default)
+=======
+
+# Regression test output files
+regression/*/output.txt
+>>>>>>> 96a0f43c (Update .gitignore to ignore all the regression output files)
