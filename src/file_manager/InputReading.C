@@ -226,11 +226,22 @@ void InputReading(int                  Sciantix_options[],
         Sciantix_variables[62] = initial_composition_Kr85m[5];
         Sciantix_variables[63] = initial_composition_Kr85m[6];
 
+<<<<<<< HEAD
         Sciantix_variables[66] =
             ReadOneParameter("Initial stoichiometry deviation[0]", input_initial_conditions, input_check);
 
         Sciantix_variables[150] = ReadOneParameter("Chromium content", input_initial_conditions, input_check);
     }
+=======
+	int n = 0;
+	while (input_history >> Time_input[n]
+						 >> Temperature_input[n]
+						 >> Fissionrate_input[n]
+						 >> Hydrostaticstress_input[n])
+	{
+		if(Sciantix_options[20] > 0)
+			input_history >> Steampressure_input[n];
+>>>>>>> 2350b269 (Changed reading of input_history to be more robust)
 
     int n = 0;
     while (input_history >> Time_input[n] >> Temperature_input[n] >> Fissionrate_input[n] >> Hydrostaticstress_input[n])
