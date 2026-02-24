@@ -5,14 +5,11 @@
 # Object files
 *.o
 *.obj
-<<<<<<< HEAD
 *.lo
 *.slo
-=======
 *.make
 *.a
 *.cmake
->>>>>>> 917de596 (Added more exceptions to the .gitignore)
 
 # Dependency files
 *.d
@@ -34,14 +31,11 @@
 *.mod
 *.smod
 
-<<<<<<< HEAD
-=======
 # Compiled Static libraries
 *.lai
 *.la
 *.lib
 
->>>>>>> 7e54e479 (Updated .gitignore to ignore generated files in driver)
 # Executables
 *.exe
 *.out
@@ -54,7 +48,6 @@ sciantix.x
 # CMake
 ########################################
 
-<<<<<<< HEAD
 build/
 obj/
 CMakeFiles/
@@ -94,11 +87,8 @@ obj/
 build/
 out/
 documentation/
->>>>>>> 917de596 (Added more exceptions to the .gitignore)
 .vscode/
 .vs/
-<<<<<<< HEAD
-
 
 ########################################
 # OS / misc junk
@@ -116,46 +106,25 @@ Testing/
 bin/
 out/
 *.png
-=======
 old_files/
 __pycache__/
 optimization
 GSA_output_files/
 
 # Generated files in driver
-<<<<<<< HEAD
 driver/sciantix_driver
 driver/output.txt
 driver/overview.txt
->>>>>>> 7e54e479 (Updated .gitignore to ignore generated files in driver)
-=======
 sciantix_driver
-<<<<<<< HEAD
 output.txt
 overview.txt
->>>>>>> 619f66ac (Added comments to main.c)
-=======
 main
-<<<<<<< HEAD
->>>>>>> 0ac16679 (Modified input to have initial condition of 20 bub/um2 as per White 2004)
-=======
 
 # Other files to ignore
 *.json
-<<<<<<< HEAD
->>>>>>> 44c557a9 (Initial Changes to inputToCSV)
-=======
 
 # Temporary data dump file
 filename.csv
-<<<<<<< HEAD
->>>>>>> 1220abec (Fixed bug in exporting parameters to csv file)
-=======
-**/error_log.txt
-**/input_check.txt
-<<<<<<< HEAD
->>>>>>> 15897ab4 (We need these local files)
-=======
 
 # Data files from running sciantix. If you need input files back, restore from test_inputs/default
 test_input/execution.txt
@@ -166,10 +135,7 @@ test_input/input_scaling_factors.txt
 test_input/input_settings.txt
 test_input/output.txt
 test_input/overview.txt
-<<<<<<< HEAD
->>>>>>> 6003c336 (Removing input files from being tracked. If need backups, go to test_input/default)
-=======
 
 # Regression test output files
 regression/*/output.txt
->>>>>>> 96a0f43c (Update .gitignore to ignore all the regression output files)
+
