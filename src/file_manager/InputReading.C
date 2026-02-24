@@ -233,14 +233,12 @@ void InputReading(int                  Sciantix_options[],
         Sciantix_variables[150] = ReadOneParameter("Chromium content", input_initial_conditions, input_check);
     }
 =======
-	int n = 0;
-	while (input_history >> Time_input[n]
-						 >> Temperature_input[n]
-						 >> Fissionrate_input[n]
-						 >> Hydrostaticstress_input[n])
-	{
-		if(Sciantix_options[20] > 0)
-			input_history >> Steampressure_input[n];
+        int n = 0;
+        while (input_history >> Time_input[n] >> Temperature_input[n] >> Fissionrate_input[n] >>
+               Hydrostaticstress_input[n])
+        {
+            if (Sciantix_options[20] > 0)
+                input_history >> Steampressure_input[n];
 >>>>>>> 2350b269 (Changed reading of input_history to be more robust)
 
     int n = 0;

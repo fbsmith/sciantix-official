@@ -28,9 +28,9 @@ double        Time_h(0.0), dTime_h(0.0), Time_end_h(0.0);  // (h)
 double        Time_s(0.0), Time_end_s(0.0);                // (s)
 double        Number_of_time_steps_per_interval(100);
 =======
-double  Time_h(0.0), dTime_h(0.0), Time_end_h(0.0); // (h)
-double  Time_s(0.0), Time_end_s(0.0); // (s)
-double  Number_of_time_steps_per_interval(50000);
+double Time_h(0.0), dTime_h(0.0), Time_end_h(0.0);  // (h)
+double Time_s(0.0), Time_end_s(0.0);                // (s)
+double Number_of_time_steps_per_interval(50000);
 >>>>>>> ce2a428a (Updated number of time steps taken by sciantix)
 
 std::ofstream Output_file;
