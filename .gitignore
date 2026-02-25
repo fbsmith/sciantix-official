@@ -84,7 +84,6 @@ __pycache__/
 # Editors / IDEs
 ########################################
 
-=======
 #doxygen
 latex
 
@@ -112,7 +111,6 @@ Testing/
 
 bin/
 out/
-*.png
 old_files/
 __pycache__/
 optimization
