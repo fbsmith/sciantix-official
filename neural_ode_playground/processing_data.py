@@ -62,7 +62,7 @@ for epoch in range(10):
     print(f"Epoch {epoch} loss {loss.item():.4f}")
     print("End training")
 
-fgr_neural_ode = odeint(odefunc, init_fgr, times)
+fgr_neural_ode = odeint(odefunc, init_fgr, times).detach().numpy()
 
 plt.plot(times, fgr, label = "Sciantix")
 plt.plot(times, fgr_neural_ode, label = "Neural-ODE")
