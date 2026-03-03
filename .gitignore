@@ -114,8 +114,6 @@ driver/sciantix_driver
 driver/output.txt
 driver/overview.txt
 sciantix_driver
-output.txt
-overview.txt
 main
 
 # Other files to ignore
