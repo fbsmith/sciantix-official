@@ -134,8 +134,6 @@ driver/sciantix_driver
 driver/output.txt
 driver/overview.txt
 sciantix_driver
-output.txt
-overview.txt
 main
 
 # Other files to ignore
@@ -155,5 +153,8 @@ test_input/output.txt
 test_input/overview.txt
 
 # Regression test output files
-regression/*/output.txt
+regression/**/execution.txt
+regression/**/input_check.txt
+regression/**/output.txt
+regression/**/overview.txt
 
