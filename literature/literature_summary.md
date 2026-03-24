@@ -16,7 +16,17 @@ Re-solution-controlled fission-gas behavior in UO2 irradiated in a fast flux
 Pati 1974
 Fission rate of UO2 at high temperatures (1400C) 3.0e13 (/cm^3sec)
 
+Temperature and fission rate effects on the rim structure formation in
+a UO2 fuel with a burnup of 7.9% FIMA 
+Kinoshita 1998
+
+On the pellet surface fission rate during the high power period (1200C) peaked around 5.0e13 (/cm^3sec) and decreased to 2.5e13 (/cm^3sec) during the low power period (800C)
+
 ## Hydrostatic Stress
+Modelling of fine fragmentation and fission gas release of UO2 fuel in accident conditions
+Jernkvist 2019
+Pore gas pressure, under normal steady-state operating conditions range from about 50-150 (MPa)
+
 - operating pressure inside a reactor
 - UO2 fill gas pressure
 - TRISO pressure build-up in fuel
