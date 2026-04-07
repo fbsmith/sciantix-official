@@ -1,0 +1,18 @@
+Sensitivity Analysis
+
+Possible Input Variables
+- temperature
+- fission rate
+- pressure
+
+Possible Output Variables
+- Xenon produced
+- Intergranular Fractional Coverage
+- burnup
+- fission gas release
+
+Sensitivity metrics
+- Pearson correlation rank
+- percent difference
+- ANOVA
+- SALib
