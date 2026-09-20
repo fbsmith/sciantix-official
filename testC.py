@@ -1,4 +1,7 @@
 import ctypes
+import pandas as pd
+import torch
+import torch.nn as nn
 
 lib = ctypes.CDLL("./sciantix-official/build/sciantix.dll")
 
@@ -22,6 +25,8 @@ lib.callSciantix.argtypes = [
 ]
 lib.callSciantix.restype = None
 
+# void Initialization(double history[], double variable[], double diffusion_modes[],
+#                      temperate[], fissionrate[], hydrostress[], pressure[]);
 lib.init_sciantix.argtypes = [
     ctypes.POINTER(ctypes.c_double),  # Sciantix_history
     ctypes.POINTER(ctypes.c_double),  # Sciantix_variables
@@ -73,7 +78,7 @@ variables = (ctypes.c_double * 161)(*sciantix_variables)
 diffusion_modes = (ctypes.c_double * 720)(*[0.0]*720)
 history = (ctypes.c_double * 11)()   # will be overwritten each step
 
-temperature_input = (ctypes.c_double * 1)(1400.0)
+temperature_input = (ctypes.c_double * 1)(1550.0)
 fissionrate_input = (ctypes.c_double * 1)(1e19)
 stress_input = (ctypes.c_double * 1)(0.0)
 steam_input = (ctypes.c_double * 1)(0.0)
@@ -86,22 +91,76 @@ lib.init_sciantix(
     steam_input, 1,
 )
 
-xenon_released = []
-xenon_produced = []
-burnup = []
-time_h = []
+index_to_name = {
+    0: "Grain radius (m)", 1: "Xe produced (at/m3)", 2: "Xe in grain (at/m3)",
+    3: "Xe in intragranular solution (at/m3)", 4: "Xe in intragranular bubbles (at/m3)",
+    5: "Xe at grain boundary (at/m3)", 6: "Xe released (at/m3)",
+    7: "Kr produced (at/m3)", 8: "Kr in grain (at/m3)",
+    9: "Kr in intragranular solution (at/m3)", 10: "Kr in intragranular bubbles (at/m3)",
+    11: "Kr at grain boundary (at/m3)", 12: "Kr released (at/m3)",
+    19: "Intragranular bubble concentration (bub/m3)", 20: "Intragranular bubble radius (m)",
+    24: "Intragranular gas bubble swelling (/)",
+    25: "Intergranular bubble concentration (bub/m2)", 29: "Intergranular atoms per bubble (at/bub)",
+    30: "Intergranular vacancies per bubble (vac/bub)", 31: "Intergranular bubble radius (m)",
+    32: "Intergranular bubble area (m2)", 33: "Intergranular bubble volume (m3)",
+    34: "Intergranular fractional coverage (/)", 35: "Intergranular saturation fractional coverage (/)",
+    36: "Intergranular gas swelling (/)", 37: "Intergranular fractional intactness (/)",
+    38: "Burnup (MWd/kgUO2)", 42: "U235 (at/m3)", 45: "U238 (at/m3)",
+}
 
-for i in range(50000):
+N_STEPS = 50000
+records = {name: [] for name in index_to_name.values()}
+records["Time (h)"] = []
+
+for idx, name in index_to_name.items():
+    records[name].append(variables[idx])
+records["Time (h)"].append(0)
+
+for i in range(N_STEPS):
     history[6] = 3600
     history[7] = i
     history[8] = i
     lib.callSciantix(options, history, variables, scaling_factors, diffusion_modes)
-    xenon_released.append(variables[6])
-    xenon_produced.append(variables[1])
-    burnup.append(variables[38])
-    time_h.append(variables[65])
 
-    if i in (0, 1, 2, 10, 100, 1000, 5500, 49999):
-        print(f"step {i}: Temperature={history[0]:.4}  Xe produced={variables[1]:.4e}  Xe released={variables[6]:.4e}  "
-              f"Burnup={variables[38]:.4e}  IrrTime={variables[65]:.4e} Diffusion Coeff={variables[160]:.4e}")
+    for idx, name in index_to_name.items():
+        records[name].append(variables[idx])
+    records["Time (h)"].append(i + 1)
 
+python_df = pd.DataFrame(records)
+
+print("Python Xe released at t=50000h:", python_df["Xe released (at/m3)"].iloc[-1])
+
+sciantix_df = pd.read_csv("output_1550K.txt", sep="\t")
+sciantix_df = sciantix_df.loc[:, ~sciantix_df.columns.str.contains("^Unnamed")]
+
+common_cols = [c for c in python_df.columns if c in sciantix_df.columns and c != "Time (h)"]
+
+merged_py = python_df.set_index("Time (h)")[common_cols]
+merged_sc = sciantix_df.set_index("Time (h)")[common_cols]
+
+merged_py, merged_sc = merged_py.align(merged_sc, join="inner")
+
+py_tensor = torch.tensor(merged_py.values, dtype=torch.float64)
+sc_tensor = torch.tensor(merged_sc.values, dtype=torch.float64)
+
+threshold = 1e-6  # tune based on your variables' typical scales
+
+# absolute error always
+abs_err = (py_tensor - sc_tensor).abs()
+
+# relative error only where ground truth is meaningfully large
+safe_mask = sc_tensor.abs() > threshold
+rel_err = torch.where(safe_mask, abs_err / sc_tensor.abs().clamp(min=threshold), torch.zeros_like(abs_err))
+
+criterion = nn.MSELoss(reduction='none')
+mse_abs = criterion(py_tensor, sc_tensor).mean(dim=0)
+mse_rel = (rel_err ** 2).mean(dim=0)
+
+report = pd.DataFrame({
+    "mse_abs": mse_abs.numpy(),
+    "rmse_abs": mse_abs.sqrt().numpy(),
+    "mean_rel_err": rel_err.mean(dim=0).numpy(),
+    "max_rel_err": rel_err.max(dim=0).values.numpy(),
+}, index=common_cols)
+
+print(report.sort_values("max_rel_err", ascending=False))
