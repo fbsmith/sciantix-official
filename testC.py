@@ -2,6 +2,7 @@ import ctypes
 import pandas as pd
 import torch
 import torch.nn as nn
+from pathlib import Path
 
 lib = ctypes.CDLL("./sciantix-official/build/sciantix.dll")
 
@@ -130,28 +131,36 @@ python_df = pd.DataFrame(records)
 
 print("Python Xe released at t=50000h:", python_df["Xe released (at/m3)"].iloc[-1])
 
-sciantix_df = pd.read_csv("output_1550K.txt", sep="\t")
+# SCIANTIX output file
+script_dir = Path(__file__).parent 
+file_path = script_dir / 'output_1550K.txt'
+
+sciantix_df = pd.read_csv(file_path, sep="\t")
 sciantix_df = sciantix_df.loc[:, ~sciantix_df.columns.str.contains("^Unnamed")]
 
+# Check for the same parameters
 common_cols = [c for c in python_df.columns if c in sciantix_df.columns and c != "Time (h)"]
 
 merged_py = python_df.set_index("Time (h)")[common_cols]
 merged_sc = sciantix_df.set_index("Time (h)")[common_cols]
 
+
+# Ensures shared rows and columns are the only ones used
 merged_py, merged_sc = merged_py.align(merged_sc, join="inner")
 
+# Create python script and SCIANTIX tensors
 py_tensor = torch.tensor(merged_py.values, dtype=torch.float64)
 sc_tensor = torch.tensor(merged_sc.values, dtype=torch.float64)
 
-threshold = 1e-6  # tune based on your variables' typical scales
+threshold = 1e-6 
 
-# absolute error always
 abs_err = (py_tensor - sc_tensor).abs()
 
-# relative error only where ground truth is meaningfully large
+# relative error only where ground truth (SCIANTIX output) is meaningfully large
 safe_mask = sc_tensor.abs() > threshold
 rel_err = torch.where(safe_mask, abs_err / sc_tensor.abs().clamp(min=threshold), torch.zeros_like(abs_err))
 
+# Compute mean squared error
 criterion = nn.MSELoss(reduction='none')
 mse_abs = criterion(py_tensor, sc_tensor).mean(dim=0)
 mse_rel = (rel_err ** 2).mean(dim=0)
@@ -164,3 +173,4 @@ report = pd.DataFrame({
 }, index=common_cols)
 
 print(report.sort_values("max_rel_err", ascending=False))
+report.to_csv('testC_output.csv')
