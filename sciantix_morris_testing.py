@@ -80,7 +80,7 @@ def run_sciantix(inputs):
         history[7] = i
         history[8] = i
         lib.callSciantix(options, history, variables, scaling_factors, diffusion_modes)
-    return variables[6] #Xe produced, Fission gas release
+    return variables[6] #Xe produced
 
 def sciantix_model(x, **kwargs):
     outputs = np.zeros(x.shape[0])
@@ -113,7 +113,7 @@ print("Mu* indices:", morris.mustar_indices)
 print("Sigma indices:", morris.sigma_indices)
 
 plt.figure()
-plt.scatter(morris.sigma_indices, morris.mustar_indices, c=['blue', 'orange', 'green'])
+plt.scatter(morris.sigma_indices, morris.mustar_indices, c=['blue', 'orange', 'green']) # Blue = Temp., Orange = FR, Green = Stress
 plt.xlabel("Sigma")
 plt.ylabel("Mu*")
 plt.title("Morris Screening Results")
