@@ -25,7 +25,7 @@ double Sciantix_diffusion_modes[SCIANTIX_DIFFUSION_MODES_SIZE];
 long long int Time_step_number(0);
 double        Time_h(0.0), dTime_h(0.0), Time_end_h(0.0);  // (h)
 double        Time_s(0.0), Time_end_s(0.0);                // (s)
-double        Number_of_time_steps_per_interval(50000);
+double        Number_of_time_steps_per_interval(100);
 
 std::ofstream Output_file;
 std::ofstream Execution_file;
