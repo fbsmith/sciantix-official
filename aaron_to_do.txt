@@ -1,18 +1,20 @@
 Sensitivity Analysis
 
-Possible Input Variables
+Perturbed Input Variables
 - temperature
 - fission rate
 - pressure
 
-Possible Output Variables
-- Xenon produced
-- Intergranular Fractional Coverage
-- burnup
-- fission gas release
+Output Variables
+- fission gas release (/)
+- intragranular gas bubble swelling (/)
+- intergranular gas swelling (/)
+- gas produced (Xe produced + Kr produced) (at/m3)
+- gas released (Xe released + Kr released) (at/m3)
 
-Sensitivity metrics
-- Pearson correlation rank
-- percent difference
-- ANOVA
-- SALib
+Prepare some slides for group meeting on Friday
+- state our objective
+- why Morris Screening
+- explain how Morris Screening works
+- show some results, changes you made, and new results
+- show next steps
