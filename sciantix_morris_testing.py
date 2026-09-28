@@ -44,7 +44,7 @@ lib.init_sciantix.argtypes = [
 lib.init_sciantix.restype = None
 
 sciantix_options = [1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-N = 50000
+N = 100
 deltaT = 3600
 
 def run_sciantix(inputs):
@@ -80,7 +80,7 @@ def run_sciantix(inputs):
         history[7] = i
         history[8] = i
         lib.callSciantix(options, history, variables, scaling_factors, diffusion_modes)
-    return variables[6] #Xe produced
+    return variables[34] #Intergranular fractional coverage
 
 def sciantix_model(x, **kwargs):
     outputs = np.zeros(x.shape[0])
@@ -100,22 +100,56 @@ param_temp = UQpy.Uniform(loc=1273, scale=200)
 param_fission_rate = UQpy.Uniform(loc=1e19, scale=2e19)
 param_stress = UQpy.Uniform(loc=50, scale=100)
 
-distribution = UQpy.JointIndependent([param_temp, param_fission_rate, param_stress])
-morris = UQpy.MorrisSensitivity(runmodel_object=model, distributions=distribution,
-                                n_levels=4, maximize_dispersion=True,)
+levels = [4, 6, 8, 10, 12, 14, 16, 18, 20]
+mu_star = []
+sigma = []
 
-t0 = time.time()
-morris.run(n_trajectories=20)
-t1 = time.time()
-print(f"Morris run took {t1-t0:.1f} s")
+for n_lev in levels:
+    distribution = UQpy.JointIndependent([param_temp, param_fission_rate, param_stress])
+    morris = UQpy.MorrisSensitivity(runmodel_object=model, distributions=distribution,
+                                n_levels=n_lev, maximize_dispersion=True,)
+    t0 = time.time()
+    morris.run(n_trajectories=25)
+    t1 = time.time()
+    print(f"Morris run took {t1-t0:.1f} s")
 
-print("Mu* indices:", morris.mustar_indices)
-print("Sigma indices:", morris.sigma_indices)
+    print("Mu* indices:", morris.mustar_indices)
+    print("Sigma indices:", morris.sigma_indices)
+    mu_star.append(np.array(morris.mustar_indices))
+    sigma.append(np.array(morris.sigma_indices))
+
+mu_star = np.vstack(mu_star)
+sigma = np.vstack(sigma)
+
+print("Mu* array: ", mu_star)
+print("Sigma indices: ", sigma)
+
+mu_star_temp = mu_star[:,0]
+mu_star_fr = mu_star[:,1]
+mu_star_stress = mu_star[:,2]
+
+sigma_temp = sigma[:,0]
+sigma_fr = sigma[:,1]
+sigma_stress = sigma[:,2]
 
 plt.figure()
-plt.scatter(morris.sigma_indices, morris.mustar_indices, c=['blue', 'orange', 'green']) # Blue = Temp., Orange = FR, Green = Stress
-plt.xlabel("Sigma")
+#plt.scatter(mu_star, sigma, c=['blue', 'orange', 'green']) # Blue = Temp., Orange = FR, Green = Stress
+plt.plot(levels, mu_star_temp, marker = 'o')
+plt.plot(levels, mu_star_fr, marker = 'o')
+plt.plot(levels, mu_star_stress, marker = 'o')
+plt.xlabel("n-levels")
 plt.ylabel("Mu*")
 plt.title("Morris Screening Results")
-plt.savefig("morris_plot_xerelease.png")
+plt.savefig("mustar_plot_fractional_cvg.png")
+
+plt.figure()
+#plt.scatter(mu_star, sigma, c=['blue', 'orange', 'green']) # Blue = Temp., Orange = FR, Green = Stress
+plt.plot(levels, sigma_temp, marker = 'o')
+plt.plot(levels, sigma_fr, marker = 'o')
+plt.plot(levels, sigma_stress, marker = 'o')
+plt.xlabel("n-levels")
+plt.ylabel("Sigma")
+plt.title("Morris Screening Results")
+plt.savefig("sigma_plot_fractional_cvg.png")
+
 print("Saved plot .png")
