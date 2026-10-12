@@ -80,7 +80,7 @@ def run_sciantix(inputs):
         history[7] = i
         history[8] = i
         lib.callSciantix(options, history, variables, scaling_factors, diffusion_modes)
-    return variables[34] #Intergranular fractional coverage
+    return variables[11] #Intergranular fractional coverage
 
 def sciantix_model(x, **kwargs):
     outputs = np.zeros(x.shape[0])
@@ -109,7 +109,7 @@ for n_lev in levels:
     morris = UQpy.MorrisSensitivity(runmodel_object=model, distributions=distribution,
                                 n_levels=n_lev, maximize_dispersion=True,)
     t0 = time.time()
-    morris.run(n_trajectories=25)
+    morris.run(n_trajectories=10)
     t1 = time.time()
     print(f"Morris run took {t1-t0:.1f} s")
 
@@ -140,7 +140,7 @@ plt.plot(levels, mu_star_stress, marker = 'o')
 plt.xlabel("n-levels")
 plt.ylabel("Mu*")
 plt.title("Morris Screening Results")
-plt.savefig("mustar_plot_fractional_cvg.png")
+plt.savefig("mustar_plot_xereleased.png")
 
 plt.figure()
 #plt.scatter(mu_star, sigma, c=['blue', 'orange', 'green']) # Blue = Temp., Orange = FR, Green = Stress
@@ -150,6 +150,6 @@ plt.plot(levels, sigma_stress, marker = 'o')
 plt.xlabel("n-levels")
 plt.ylabel("Sigma")
 plt.title("Morris Screening Results")
-plt.savefig("sigma_plot_fractional_cvg.png")
+plt.savefig("sigma_plot_xereleased.png")
 
 print("Saved plot .png")
