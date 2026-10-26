@@ -18,3 +18,8 @@ Prepare some slides for group meeting on Friday
 - explain how Morris Screening works
 - show some results, changes you made, and new results
 - show next steps
+
+10/12 - To Do
+- Run validation cases from  Campolongo et al paper
+- Run validation case of Gas production for from Smith paper
+- Further research into other sensitivity analysis methods
