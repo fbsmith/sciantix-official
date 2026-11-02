@@ -1,1 +1,5 @@
 Run SCIANTIX varying different values of hydrostatic stress
+
+- correlation analysis
+- sobol indices
+
