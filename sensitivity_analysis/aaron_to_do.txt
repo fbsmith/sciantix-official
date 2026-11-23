@@ -29,3 +29,9 @@ Prepare some slides for group meeting on Friday
 - Look into total sobol indices
 - sobol toy problem
 - look into input variability (ramp test)
+
+11/23
+- Look into the negative indices and where they could be coming from
+- Big title on graphs
+- Grid lines on graphs
+- Total Sobol indices

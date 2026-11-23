@@ -1,0 +1,4 @@
+November 23, 2026
+- understand what Chatterjee Indices are and how they work
+- better analysis of the Chatterjee Indices
+
