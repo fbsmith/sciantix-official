@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import UQpy
 import os
+import matplotlib.pyplot as plt
 
 N_SAMPLES = 1024      # Sample size
 SOURCE_FILE = "./sciantix-official/src/operations/UpdateVariables.C"   # holds SCIANTIX's variable names
@@ -168,8 +169,10 @@ if __name__ == "__main__":
 
     # =================== Results ===================
     S1 = np.asarray(sobol.first_order_indices)      # (n_inputs, n_outputs)
+    ST = np.asarray(sobol.total_order_indices)
     Y = np.array(sm.OUTPUTS)                        # (n_runs, n_outputs): raw outputs of every run
 
+    # TODO: Write out TSI results
     rows = []
     for j in sorted(names):
         col = Y[:, j]
@@ -200,3 +203,14 @@ if __name__ == "__main__":
     print("\nOutputs dominated by each input (largest first-order index):")
     print(df[is_ok]["dominant_input"].value_counts().to_string())
     print("\nSaved sobol_indices.csv")
+
+    colors = ['tab:blue', 'tab:orange', 'tab:green']
+    for k, n in enumerate(input_names):
+        plot_data = df[is_ok].set_index("output")[f"S1_{n}"].sort_values()
+
+        fig, ax = plt.subplots(figsize=(20, 0.3 * len(plot_data) + 1))   # taller for more outputs
+        ax.barh(plot_data.index, plot_data.values, color=colors[k])
+        ax.set_xlabel(f"First Order Sobol Indices for {n.capitalize()}")
+        plt.tight_layout()
+        plt.savefig(f"sobol_{n}.png", dpi=200)
+        plt.close(fig)
