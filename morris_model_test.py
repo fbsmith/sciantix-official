@@ -7,7 +7,6 @@ A = np.array([0.001, 89.9, 5.54, 42.10, 0.78, 1.26,
               0.04, 0.79, 74.51, 4.32, 82.51, 41.62])
 
 def g_model(x, **kwargs):
-    x = np.atleast_2d(x)                      # shape (n_samples, 12)
     g_i = (np.abs(4 * x - 2) + A) / (1 + A)   # each column uses its own a_i
     return np.prod(g_i, axis=1)               # one output per sample
 

@@ -23,3 +23,9 @@ Prepare some slides for group meeting on Friday
 - Run validation cases from  Campolongo et al paper
 - Run validation case of Gas production for from Smith paper
 - Further research into other sensitivity analysis methods
+
+11/18
+- Compare sobol case with morris case
+- Look into total sobol indices
+- sobol toy problem
+- look into input variability (ramp test)
